@@ -1,0 +1,14 @@
+Displaying folder structure under Tomcat
+
+1.	To create a folder structure in tomcat server first have to change configuration in web.xml file.
+Change web.xml file located in conf directory of tomcat installed path as below
+<init-param>
+            <param-name>listings</param-name>
+            <param-value>true</param-value>
+        </init-param>
+
+( to find for a word in vi editor type as /<word_name>  to find the particular word and use esc + n  to move to the next available word.)
+2.	Then create a new directory under webapps directory and in that new directory add files or directories what u want to display in tomcat browser.
+Ex : 165.256.6.8:8090/tomcat_test/fca
+It will take to fca directory present in tomcat_test directory and displays content i.e; files or directories present under fca directory. If you click on any files it will shows the file content.
+

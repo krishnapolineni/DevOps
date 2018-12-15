@@ -1,0 +1,32 @@
+How to update java using alternatives command ( to change the active version when multiple versions are installed )
+1---> which java
+o/p---> /usr/bin/java
+2---> ls -l /usr/bin/java
+o/p---> lrwxrwxrwx 1 root root 22 Sep 26 01:55 /usr/bin/java -> /etc/alternatives/java
+3---> ls -l /etc/alternatives/java
+o/p---> lrwxrwxrwx 1 root root 46 Sep 26 01:55 /etc/alternatives/java -> /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+4---> ls -l /usr/lib/jvm/
+o/p---> total 12
+drwxr-xr-x 3 root root 4096 Sep 26 01:44 java-1.7.0-openjdk-1.7.0.191.x86_64
+lrwxrwxrwx 1 root root   39 Sep 26 01:44 jre-1.7.0-openjdk.x86_64 -> java-1.7.0-openjdk-1.7.0.191.x86_64/jre
+lrwxrwxrwx 1 root root   27 Sep 26 01:44 jre-1.7.0 -> /etc/alternatives/jre_1.7.0
+drwxr-xr-x 3 root root 4096 Sep 26 01:44 java-1.7.0-openjdk-1.7.0.181.x86_64
+drwxr-xr-x 3 root root 4096 Sep 26 01:55 java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+lrwxrwxrwx 1 root root   57 Sep 26 01:55 jre-1.8.0-openjdk.x86_64 -> java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64/jre
+lrwxrwxrwx 1 root root   24 Sep 26 01:55 jre-1.8.0-openjdk -> jre-1.8.0-openjdk.x86_64
+lrwxrwxrwx 1 root root   21 Sep 26 01:55 jre -> /etc/alternatives/jre
+lrwxrwxrwx 1 root root   29 Sep 26 01:55 jre-openjdk -> /etc/alternatives/jre_openjdk
+lrwxrwxrwx 1 root root   27 Sep 26 01:55 jre-1.8.0 -> /etc/alternatives/jre_1.8.0
+
+
+5---> update-alternatives --config java  
+o/p--> 
+There are 2 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*+ 1           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+   2           /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number: 2
+

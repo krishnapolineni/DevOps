@@ -1,0 +1,9 @@
+How to install Jenkins 
+(prior to start read prerequisites for Jenkins ) ( java 8 is prerequisite)
+1--> browse Jenkins for linux
+2--> download the Jenkins installable file
+3--> copy the downloading file link address
+4--> use that copied address in Linux server ( yum install < copied link address > )
+5--> start the service ( service Jenkins start )
+6--> check the service is running or not ( # netstat -lntp | grep -i 8080 )
+7--> use public IP in browser with port number to start jenkins

@@ -1,0 +1,10 @@
+Procedure to integrate GitHub with Jenkins (SSH)
+
+1--> Run ssh - keygen command as jenkins user. It will create .ssh in Jenkins home directory ( i.e, /var/lib/jenkins this is mine ) and copy the
+     id_rsa.pub key present in .ssh directory.
+    copying the code: cat /var/lib/jenkins/.ssh/id_rsa.pub   by using this command it will display a encrypted code and copy that code.
+
+2--> Go to GitHub home page in browser then go to settings ---> select Deploy keys option, there enter title what u want and paste the encrypted     
+     public key in below and tick for allow write access. then finally press add key button in bottom.   
+
+3--> Now use ssh git url in Jenkins or Linux server

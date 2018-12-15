@@ -1,0 +1,246 @@
+ Adding, Modifying, deleting the files and commit the changes to GitHub repo using Jenkins
+•	In Jenkins home page select new item and give new name and select freestyle project then press ok to start the new project.
+•	Then it opens configure page, there go to SCM select GIT and give the details.( refer How to clone GitHub file).
+•	Go to Build option and select execute shell.
+•	In execute shell enter commands what you want.
+Ex:  
+             ls -latr ${WORKSPACE}        ( for listing contents in current project workspace )
+ls -latr ${WORKSPACE} | wc -l ( to know count of files in workspace )
+du -h ${WORKSPACE}/*  ( to list the files along with its size )
+
+mkdir 2909sample${BUILD_NUMBER}          ( to create an empty directory )
+echo "adding 1st file using echo" > 2909file1${BUILD_NUMBER} (to create a file with some text and save that file with given name along with build number )
+
+(bcoz, git will not recognize empty files)
+
+echo "adding 2st file using echo" > 2909file2${BUILD_NUMBER}
+rm -rf merge  ( to delete a file )
+echo " adding text to kittu " >> kittu   ( to add text to existing file )
+git status      
+git add .
+git commit -m "creating and deleting files"
+git status
+git branch
+git push origin aws-test  
+
+ls -latr ${WORKSPACE}
+ls -latr ${WORKSPACE} | wc -l
+du -h ${WORKSPACE}/*  
+•	Then save the configuration and click on build now option. Go to console output to see the job output.
+Ex output : 
+Started by user krishna
+Building in workspace /jenkins/workspace/1
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:krishnapolineni/krishnadevops.git # timeout=10
+Fetching upstream changes from git@github.com:krishnapolineni/krishnadevops.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress git@github.com:krishnapolineni/krishnadevops.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse origin/aws-test^{commit} # timeout=10
+Checking out Revision 803b80d055ce62eeef1c2f2cd33360d004c541cf (origin/aws-test)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 803b80d055ce62eeef1c2f2cd33360d004c541cf
+Commit message: "creating and deleting files"
+ > git rev-list --no-walk 803b80d055ce62eeef1c2f2cd33360d004c541cf # timeout=10
+[1] $ /bin/sh -xe /tmp/jenkins9090561352131398750.sh
++ ls -latr /jenkins/workspace/1
+total 120
+-rw-r--r--  1 jenkins jenkins   22 Sep 29 05:10 test
+-rw-r--r--  1 jenkins jenkins   31 Sep 29 05:10 polineni3
+-rw-r--r--  1 jenkins jenkins   11 Sep 29 05:10 polineni2
+-rw-r--r--  1 jenkins jenkins   33 Sep 29 05:10 polineni1
+-rw-r--r--  1 jenkins jenkins   10 Sep 29 05:10 polin
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 mister
+-rw-r--r--  1 jenkins jenkins   50 Sep 29 05:10 leela
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:10 krishnadevops
+-rw-r--r--  1 jenkins jenkins   38 Sep 29 05:10 k2
+-rw-r--r--  1 jenkins jenkins   23 Sep 29 05:10 hungamma
+-rw-r--r--  1 jenkins jenkins    9 Sep 29 05:10 hi
+-rw-r--r--  1 jenkins jenkins   23 Sep 29 05:10 hai1
+-rw-r--r--  1 jenkins jenkins   22 Sep 29 05:10 hai
+-rw-r--r--  1 jenkins jenkins   32 Sep 29 05:10 f2
+-rw-r--r--  1 jenkins jenkins   34 Sep 29 05:10 danger
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 bye
+-rw-r--r--  1 jenkins jenkins   25 Sep 29 05:10 bello
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 5
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 2
+-rw-r--r--  1 jenkins jenkins   26 Sep 29 05:10 1
+-rw-r--r--  1 jenkins jenkins   18 Sep 29 05:10 0123
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:10 2909sample23
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:11 2909sample24
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:14 2909sample25
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:15 2909sample26
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:16 2909sample27
+-rw-r--r--  1 jenkins jenkins   27 Sep 29 05:16 2909file227
+-rw-r--r--  1 jenkins jenkins   27 Sep 29 05:16 2909file127
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:19 2909sample28
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:21 2909sample29
+drwxr-xr-x 17 jenkins jenkins 4096 Oct  2 05:43 ..
+drwxr-xr-x 11 jenkins jenkins 4096 Oct  2 06:09 .
+-rw-r--r--  1 jenkins jenkins   58 Oct  2 06:09 kittu
+drwxr-xr-x  8 jenkins jenkins 4096 Oct  2 06:09 .git
++ ls -latr /jenkins/workspace/1
++ wc -l
+35
++ du -h /jenkins/workspace/1/0123 /jenkins/workspace/1/1 /jenkins/workspace/1/2 /jenkins/workspace/1/2909file127 /jenkins/workspace/1/2909file227 /jenkins/workspace/1/2909sample23 /jenkins/workspace/1/2909sample24 /jenkins/workspace/1/2909sample25 /jenkins/workspace/1/2909sample26 /jenkins/workspace/1/2909sample27 /jenkins/workspace/1/2909sample28 /jenkins/workspace/1/2909sample29 /jenkins/workspace/1/5 /jenkins/workspace/1/bello /jenkins/workspace/1/bye /jenkins/workspace/1/danger /jenkins/workspace/1/f2 /jenkins/workspace/1/hai /jenkins/workspace/1/hai1 /jenkins/workspace/1/hi /jenkins/workspace/1/hungamma /jenkins/workspace/1/k2 /jenkins/workspace/1/kittu /jenkins/workspace/1/krishnadevops /jenkins/workspace/1/leela /jenkins/workspace/1/mister /jenkins/workspace/1/polin /jenkins/workspace/1/polineni1 /jenkins/workspace/1/polineni2 /jenkins/workspace/1/polineni3 /jenkins/workspace/1/test
+4.0K	/jenkins/workspace/1/0123
+4.0K	/jenkins/workspace/1/1
+0	/jenkins/workspace/1/2
+4.0K	/jenkins/workspace/1/2909file127
+4.0K	/jenkins/workspace/1/2909file227
+4.0K	/jenkins/workspace/1/2909sample23
+4.0K	/jenkins/workspace/1/2909sample24
+4.0K	/jenkins/workspace/1/2909sample25
+4.0K	/jenkins/workspace/1/2909sample26
+4.0K	/jenkins/workspace/1/2909sample27
+4.0K	/jenkins/workspace/1/2909sample28
+4.0K	/jenkins/workspace/1/2909sample29
+0	/jenkins/workspace/1/5
+4.0K	/jenkins/workspace/1/bello
+0	/jenkins/workspace/1/bye
+4.0K	/jenkins/workspace/1/danger
+4.0K	/jenkins/workspace/1/f2
+4.0K	/jenkins/workspace/1/hai
+4.0K	/jenkins/workspace/1/hai1
+4.0K	/jenkins/workspace/1/hi
+4.0K	/jenkins/workspace/1/hungamma
+4.0K	/jenkins/workspace/1/k2
+4.0K	/jenkins/workspace/1/kittu
+4.0K	/jenkins/workspace/1/krishnadevops
+4.0K	/jenkins/workspace/1/leela
+0	/jenkins/workspace/1/mister
+4.0K	/jenkins/workspace/1/polin
+4.0K	/jenkins/workspace/1/polineni1
+4.0K	/jenkins/workspace/1/polineni2
+4.0K	/jenkins/workspace/1/polineni3
+4.0K	/jenkins/workspace/1/test
++ mkdir 2909sample30
++ echo 'adding 1st file using echo'
++ echo 'adding 2st file using echo'
++ rm -rf merge
++ echo ' adding text to kittu '
++ git status
+HEAD detached at 803b80d
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   kittu
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	2909file130
+	2909file230
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git add .
++ git commit -m 'creating and deleting files'
+[detached HEAD 5226e78] creating and deleting files
+ Committer: Jenkins Automation Server <jenkins@ip-172-31-19-97.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 3 insertions(+)
+ create mode 100644 2909file130
+ create mode 100644 2909file230
++ git status
+HEAD detached from 803b80d
+nothing to commit, working tree clean
++ git branch
+* (HEAD detached from 803b80d)
+  aws-test
++ git push origin aws-test
+Everything up-to-date
++ ls -latr /jenkins/workspace/1
+total 132
+-rw-r--r--  1 jenkins jenkins   22 Sep 29 05:10 test
+-rw-r--r--  1 jenkins jenkins   31 Sep 29 05:10 polineni3
+-rw-r--r--  1 jenkins jenkins   11 Sep 29 05:10 polineni2
+-rw-r--r--  1 jenkins jenkins   33 Sep 29 05:10 polineni1
+-rw-r--r--  1 jenkins jenkins   10 Sep 29 05:10 polin
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 mister
+-rw-r--r--  1 jenkins jenkins   50 Sep 29 05:10 leela
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:10 krishnadevops
+-rw-r--r--  1 jenkins jenkins   38 Sep 29 05:10 k2
+-rw-r--r--  1 jenkins jenkins   23 Sep 29 05:10 hungamma
+-rw-r--r--  1 jenkins jenkins    9 Sep 29 05:10 hi
+-rw-r--r--  1 jenkins jenkins   23 Sep 29 05:10 hai1
+-rw-r--r--  1 jenkins jenkins   22 Sep 29 05:10 hai
+-rw-r--r--  1 jenkins jenkins   32 Sep 29 05:10 f2
+-rw-r--r--  1 jenkins jenkins   34 Sep 29 05:10 danger
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 bye
+-rw-r--r--  1 jenkins jenkins   25 Sep 29 05:10 bello
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 5
+-rw-r--r--  1 jenkins jenkins    0 Sep 29 05:10 2
+-rw-r--r--  1 jenkins jenkins   26 Sep 29 05:10 1
+-rw-r--r--  1 jenkins jenkins   18 Sep 29 05:10 0123
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:10 2909sample23
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:11 2909sample24
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:14 2909sample25
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:15 2909sample26
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:16 2909sample27
+-rw-r--r--  1 jenkins jenkins   27 Sep 29 05:16 2909file227
+-rw-r--r--  1 jenkins jenkins   27 Sep 29 05:16 2909file127
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:19 2909sample28
+drwxr-xr-x  2 jenkins jenkins 4096 Sep 29 05:21 2909sample29
+drwxr-xr-x 17 jenkins jenkins 4096 Oct  2 05:43 ..
+-rw-r--r--  1 jenkins jenkins   81 Oct  2 06:09 kittu
+drwxr-xr-x  2 jenkins jenkins 4096 Oct  2 06:09 2909sample30
+-rw-r--r--  1 jenkins jenkins   27 Oct  2 06:09 2909file230
+-rw-r--r--  1 jenkins jenkins   27 Oct  2 06:09 2909file130
+drwxr-xr-x 12 jenkins jenkins 4096 Oct  2 06:09 .
+drwxr-xr-x  8 jenkins jenkins 4096 Oct  2 06:09 .git
++ wc -l
++ ls -latr /jenkins/workspace/1
+38
++ du -h /jenkins/workspace/1/0123 /jenkins/workspace/1/1 /jenkins/workspace/1/2 /jenkins/workspace/1/2909file127 /jenkins/workspace/1/2909file130 /jenkins/workspace/1/2909file227 /jenkins/workspace/1/2909file230 /jenkins/workspace/1/2909sample23 /jenkins/workspace/1/2909sample24 /jenkins/workspace/1/2909sample25 /jenkins/workspace/1/2909sample26 /jenkins/workspace/1/2909sample27 /jenkins/workspace/1/2909sample28 /jenkins/workspace/1/2909sample29 /jenkins/workspace/1/2909sample30 /jenkins/workspace/1/5 /jenkins/workspace/1/bello /jenkins/workspace/1/bye /jenkins/workspace/1/danger /jenkins/workspace/1/f2 /jenkins/workspace/1/hai /jenkins/workspace/1/hai1 /jenkins/workspace/1/hi /jenkins/workspace/1/hungamma /jenkins/workspace/1/k2 /jenkins/workspace/1/kittu /jenkins/workspace/1/krishnadevops /jenkins/workspace/1/leela /jenkins/workspace/1/mister /jenkins/workspace/1/polin /jenkins/workspace/1/polineni1 /jenkins/workspace/1/polineni2 /jenkins/workspace/1/polineni3 /jenkins/workspace/1/test
+4.0K	/jenkins/workspace/1/0123
+4.0K	/jenkins/workspace/1/1
+0	/jenkins/workspace/1/2
+4.0K	/jenkins/workspace/1/2909file127
+4.0K	/jenkins/workspace/1/2909file130
+4.0K	/jenkins/workspace/1/2909file227
+4.0K	/jenkins/workspace/1/2909file230
+4.0K	/jenkins/workspace/1/2909sample23
+4.0K	/jenkins/workspace/1/2909sample24
+4.0K	/jenkins/workspace/1/2909sample25
+4.0K	/jenkins/workspace/1/2909sample26
+4.0K	/jenkins/workspace/1/2909sample27
+4.0K	/jenkins/workspace/1/2909sample28
+4.0K	/jenkins/workspace/1/2909sample29
+4.0K	/jenkins/workspace/1/2909sample30
+0	/jenkins/workspace/1/5
+4.0K	/jenkins/workspace/1/bello
+0	/jenkins/workspace/1/bye
+4.0K	/jenkins/workspace/1/danger
+4.0K	/jenkins/workspace/1/f2
+4.0K	/jenkins/workspace/1/hai
+4.0K	/jenkins/workspace/1/hai1
+4.0K	/jenkins/workspace/1/hi
+4.0K	/jenkins/workspace/1/hungamma
+4.0K	/jenkins/workspace/1/k2
+4.0K	/jenkins/workspace/1/kittu
+4.0K	/jenkins/workspace/1/krishnadevops
+4.0K	/jenkins/workspace/1/leela
+0	/jenkins/workspace/1/mister
+4.0K	/jenkins/workspace/1/polin
+4.0K	/jenkins/workspace/1/polineni1
+4.0K	/jenkins/workspace/1/polineni2
+4.0K	/jenkins/workspace/1/polineni3
+4.0K	/jenkins/workspace/1/test
+Triggering a new build of github
+Finished: SUCCESS
+
+
+

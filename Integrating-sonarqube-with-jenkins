@@ -1,0 +1,21 @@
+Integrating SonarQube with Jenkins
+1.	Go to manage Jenkins in Jenkins home page  click on manage plugins  download and install sonarqube scanner for Jenkins plugin and restart the Jenkins server.
+2.	In manage Jenkins  click on configure system  fill the columns in sonarqube servers as shown in below image.
+ 
+Enter the token generated in sonarqube web browser. Then save the configure system settings.
+3.	In manage Jenkins  click on global tool configuration  fill the details in sonarqube scanner as shown in below image.
+ 
+         Tick on install automatically to install sonarqube scanner on Linux server.
+4.	Then create a new job and configure as follows
+	Select Git on SCM and give the GitHub URL  and branch to checkout
+	In build option select sonarqube scanner to scan the code in workspace and fill the details as shown in image.
+ 
+Testproj in analysis properties is project name and has to change for every project. Without the details in analysis properties build will get failure.
+Some examples for analysis properties:
+                                     <property name="project.dir" value="${basedir}/xalg.prj/h3_service_fo" />   
+                                     <property name="sonar.java.binaries" location="${project.build.dir}/classes/main" />
+                                    <property name="sonar.java.test.binaries" value="${project.build.dir}/classes/test" />
+
+5.	Then save the project and build it.
+
+

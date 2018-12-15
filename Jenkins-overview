@@ -1,0 +1,77 @@
+---------------Jenkins-------------------
+create a job ==== in jenkins home page select new job option---> there enter a project name in empty column and select which type of job it is ( mostly free style )--->
+ then you have to configure that job.
+--> in configure page there are some categories like 
+     --> General
+     --> Source code management
+
+     --> Build Triggers
+     --> Build Environment 
+     --> Build
+     --> Post-Build Actions
+
+
+---------General-----------
+       In general category there are some configurations
+---> Discard old builds
+        This determines when, if ever, build records for this project should be discarded. Build records include the console output, archived artifacts, and any other 
+metadata related to a particular build. Keeping fewer builds means less disk space will be used in the Build Record Root Directory, which is specified on the 
+Configure System screen.
+
+Jenkins offers two options for determining when builds should be discarded:
+
+Build age: discard builds if they reach a certain age; for example, seven days old.
+Build count: discard the oldest build if a certain number of builds already exist.
+These two options can be active at the same time, so you can keep builds for 14 days, but only up to a limit of 50 builds, for example. If either limit is exceeded, 
+then any builds beyond that limit will be discarded.You can also ensure that important builds are kept forever, regardless of the setting here — click the Keep this 
+build forever button on the build page. The last stable and last successful build are also excluded from these rules.
+            
+---> GitHub project	
+---> This project is parameterised
+       Parameters allow you to prompt users for one or more inputs that will be passed into a build. In this category there are some parameters to select 
+according to requirement.
+       --> Boolean parameter :  which you can use during a build, either as an environment variable, or through variable substitution in some other parts
+                               of the configuration. The string value will be 'true' or 'false'.
+       --> choice parameter : Defines a simple string parameter, which can be selected from a list. You can use it during a build, either as an environment 
+                               variable, or through variable substitution in some other parts of the configuration.
+                      -> in this parameter write variable name in name column and enter the choices in choices column which can be select among these choices when we 
+                           build with parameters option. This type of parameters are used in rare environment which has very few choices.
+       --> Credentials parameter 
+       --> File parameter
+       --> List subversion tags (and more)
+       --> Multi-line string parameter
+       --> Password parameter
+       --> Run parameter
+       --> String parameter : Defines a simple text parameter, where users can enter a string value, which you can use during a build, either as an environment variable,
+                              or through variable substitution in some other parts of the configuration.		
+---> Throttle builds	
+---> Disable this project : When this option is checked, no new builds of this project will be executed. This can be helpful when you want to temporarily prevent a 
+project from being built. For example, if your project depends on some infrastructure — e.g. a test server, or a source code repository — and you know it will be 
+unavailable for a period of time, you could disable the project to prevent unnecessary build failures (and any corresponding notifications) during this period.	
+---> Execute concurrent builds if necessary : This will build the job continuos.
+
+--------SCM-----------
+here 3 options are available, they are
+---> None : for selecting no scm
+---> GIT : to integrate GitHub with Jenkins tick this option and enter GitHub url in repository url column. 
+---> Subversion : for svn job tick this option.
+
+------Build triggers---------
+
+---> Trigger builds remotely (e.g., from scripts)	
+--->Build after other projects are built : give another job name to run this job after running that job.	
+---> Build periodically : It build the job for every period of time given in crontab even if new changes occur or not.
+---> GitHub hook trigger for GITScm polling
+---> Poll SCM : It triggers the GitHub for period of time given in crontab and builds only if any changes are there in GitHub.
+
+-------Build Environment--------- 
+
+---> Delete workspace before build starts : this feature will delete the workspace before job build starts.	
+Use secret text(s) or file(s) 	
+Abort the build if it's stuck : if you want to abort any build if it is taking too much time you can set a time to abort the build after a particular time.	
+Add timestamps to the Console Output	
+With Ant
+
+
+
+

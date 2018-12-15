@@ -1,0 +1,91 @@
+ User  Administration 
+# useradd <username>  (Creates user with its home directory)
+# adduser <username>  (Creates user with its home directory)
+# useradd -u <uid> -g <gid> -G <secondary group> -c <comment> -d <home directory> -s <shell> <username> (creates user with specific details)
+# newusers <file name>  ( to create multiple users at a time)
+   Note: 1) first we have to create a file and enter user’s data as fields same as in /etc/passwd file for how many users want to create 
+              2) By using above command users will create but their environmental files like .bashrc, .bash_logout, .bash_profile and .bash_history files will not copy from /etc/skel directory. So, we have to copy it manually from /etc/skel directory.
+# userdel -r <username> (will deletes user along with its home directory)
+# userdel -f <username> (will deletes user even if the user is logged in but the users home directory will not deleted)
+# userdel <username> (user will be deleted but users home directory will not deleted)
+# id <username> or cat /etc/passwd | grep <username> ( to check the user is exist or not)
+# usermod <options> <username> (to modify the details of exist user)
+              -L = to lock the password
+	   -U = to unlock the password
+ 	   -u = modify user id
+	   -g = modify group id
+	   -G = modify or add the secondary group
+	   -c = add or modify the comment message
+	   -d = modify home directory
+	   -s = modify user’s login shell
+	   -l = modify user’s login name
+       Syntax :  # usermod -u 1005 <username>
+# groups <username> ( to check the user belongs to how many groups)
+# groupadd <groupname> ( to create group)
+# groupadd <options> <groupname> (to create group with specific details)
+ 	-g = group id
+ 	-p = group password
+ 	-r = system group
+# groupmod <options> <groupname>
+ 	-g = to modify group name
+ 	-n = to rename the group name
+# groupdel <groupname>   ( to delete the group )
+# groupdel -R <groupname>   (to delete the group and apply changes to root )
+# gpasswd <groupname>  ( to assign a password to group )
+# gpasswd <options> <groupname>
+   	-a = add user to the group
+ 	-d = delete the user from the group
+ 	Syntax : gpasswd -d <username> <groupname>
+ 	-r = remove the group password
+ 	-R = restrict to access that group
+ 	-A = to make user as admin to the group  
+ 	Syntax : gpasswd -A <username> <groupname>
+ 	-M = to add multiple users into the group 
+ 	Syntax : gpasswd -M user1,user2,user3,….  <groupname>
+	 -G = to add user without overwriting
+ 	Syntax : gpasswd -G <groupname> <username>
+# chage <options> <username>
+ 	-d = last date when password changed
+ 	Syntax : chage -d 2018-07-21 <username> ( to set password changed date )
+ 	-E = to change password expiry date
+ 	Syntax : chage -E 2019-12-31 <username> ( to set expiry to end of 2019)
+  	      Chage -E -1 <username>  ( to set never expiry of password )
+ 	-I = to change inactive days  
+ 	Syntax : chage -I 5 <username>  ( to set inactive days as 5 ) (after password expiry inactive days is 5 . so , after these 5 days account will get lock if password is not changed)
+ 	      Chage -I -1 <username>  ( to set never inactive )
+ 	-l = list all the policies
+ 	 Syntax : chage -l <username>
+ 	-m = min. days to change password
+ 	Syntax : chage -m 2 <username>  ( now you can change password only after two days of password changed )
+ 	      chage -m 0 <username>  ( to set no min. days )
+ 	-M = Maximum number of days between password change
+ 	Syntax : chage -M 99999 <username> (to set max. no. of days )
+ 	-w = warning days before password expiry
+ 	Syntax : chage -w 7 <username>  ( to set warning before 7 days of password expiry )
+# su - <username>  ( to login as specific user )
+# who ( to see users who are currently login and on which terminal they login )
+# w ( to know the how many users are currently login and their processes )
+# last ( to see the list of users who are login and logout since /var/log/wtmp file was created )
+# lastb ( to see the list of users who tried as bad logins )
+# last reboot ( to see all reboots since the log file was created )
+# uptime ( to see the info from how long the system is running, how many users login and load average )
+# uname -r ( to know the kernel version )
+# last -x ( it shows last shutdown and reboot date and time )
+# last -x grep shutdown ( only shutdown time shows )
+# cat /etc/shells (or) chsh -l ( to see how many shells that are supported by Linux )
+# echo $SHELL ( to see current shell )
+# chsh <username> ( to change the user’s she'll )
+# history ( to see the history of commands )
+# history -c ( to clear the history )
+# history -r ( to recover the history )
+# whoami ( to see current user name )
+# who am i (to see the current user full details like login time and others )
+
+File Systems
+#  /etc/mtab  ( File which stores the information of all the currently mounted file systems and this file is dynamic and keep on changing.
+#  /etc/fstab ( Keeping information about the permanent Mount points )
+# fdisk /dev/sda  ( to create partition )
+# partprobe <device name>  ( to update created partition into kernel )
+# mkfs.ext4/xfs  <device name> ( to make file system )
+# umount -a  ( to unmount all partitions )
+

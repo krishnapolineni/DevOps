@@ -1,0 +1,43 @@
+Using Git commands via Jenkins job
+•	First create a new job as free style project. Select git in SCM category and give the GitHub URL and branch name which you want to checkout.
+•	In build category select execute shell and in shell give the commands what you want to execute.
+Ex:  echo "------------------------------------------------------------------------------------------------"
+git checkout git-test    ( to move to another branch )
+git branch            ( to list all the branches available and know the in which branch you are in )
+ls -latr|wc -l         ( to know the count of content in current branch )
+git status         
+touch test-file.txt        (to create an empty file )
+git status
+git log --oneline -10         ( to list the recent 10 logs i.e; commit id’s and commit message )  
+git commit --amend -m "test-file added"    ( to edit the previous commit message )
+git log --oneline -10 
+git branch - -merged  
+git branch --no-merged 
+git pull origin git-test
+git push origin git-test
+git status
+echo "------------------------------------------------------------------------------------------"
+git diff --
+git branch
+git checkout aws
+git branch
+git checkout devops
+git branch
+git checkout git-test
+git branch
+git branch --merged
+git branch --no-merged
+git checkout aws-test
+git branch
+git branch -d aws
+git branch
+git push origin :aws
+echo "============================================================================================="
+git branch
+git pull
+git remote -v
+# remote branches
+git branch -r
+# all branches
+git branch -a
+

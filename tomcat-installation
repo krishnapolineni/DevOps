@@ -1,0 +1,50 @@
+Tomcat Installation
+1.	Tomcat 8.5 requires java 7 or later as prerequisites. 
+2.	Go to https://tomcat.apache.org/download-80.cgi and find for 8.5  in core select tar.gz, then download will start and go to downloads copy the link address.
+3.	In AWS Linux server choose any path ex : /opt  and move to it then use wget command to download the package
+Ex : # wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz
+4.	Extract the tar.gz file using tar command
+Ex : # tar -xvzf  apache-tomcat-8.5.34.tar.gz
+5.	Then run the apache-tomcat using yum command
+Ex : # yum install apache-tomcat-8.5.34 -y
+6.	Follow commands as below to configure tomcat
+# cd apache-tomcat-8.5.34
+# cd bin ( in bin directory startup.sh, shutdown.sh ……….. like files are available )
+# pwd    (o/p will be /opt/apache-tomcat-8.5.34/bin )
+# chmod +x startup.sh,shutdown.sh
+# ln -s /opt/apache-tomcat-8.5.34/bin/startup.sh  /usr/local/bin/tomcatup
+# ln -s /opt/apache-tomcat-8.5.34/bin/shutdown.sh  /usr/local/bin/tomcatdown
+(above two are to create soft links start and stop tomcat service )
+# tomcatup ( to start the tomcat service )
+# ps -ef | grep -i tomcat  ( to know the tomcat process is running or not )
+7.	Go to browser and enter public IP along with port number (8080 default ) to start the tomcat in browser.
+Ex : 162.189.3.5:8080
+8.	To change the default port number, go to server.xml file located in conf directory.
+# vi /opt/apache-tomcat-8.5.34/conf/server.xml
+In the file change connector port to any port number available 
+Ex : connector port : 8090
+Then save and exit from the file.
+Restart the tomcat.
+9.	To access the manager app option in tomcat application some changes has to made as below
+# find /  -name  context.xml
+o/p will be as 
+/opt/apache-tomcat-8.5.34/webapps/manager/META-INF/context.xml
+/opt/apache-tomcat-8.5.34/webapps/host-manager/META-INF/context.xml
+/opt/apache-tomcat-8.5.34/conf/context.xml  
+Add comment to  the first two files as below using VI editor
+<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+still to access the manager app option have to change another file i.e; add some content in below file
+# vi /opt/apache-tomcat-8.5.34/conf/tomcat-users.xml   
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-jmx"/>
+  <role rolename="manager-status"/>
+  <user username="admin1" password="admin1" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+  <user username="deployer" password="deployer" roles="manager-script"/>
+  <user username="tomcat" password="s3cret" roles="manager-gui"/>
+Add above highlighted text in tomcat-users.xml file
+Restart the tomcat and now can access the manager app and use the credentials given in tomcat-users.xml file.
+
+10.	Reference video URL is https://youtu.be/m21nFreFw8A
+

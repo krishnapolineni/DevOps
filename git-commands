@@ -1,0 +1,123 @@
+GIT  Commands
+1.	Tell git who you are
+# git config - -global user.name “<user_name>”
+# git config - -global user.email ”<user_email_id>”
+2.	To initialize the git and create a local repository
+# git init
+3.	Get code from remote repo to local repo
+# git clone <git_URL>
+4.	To add a file from workspace to index area
+# git add <file_name>   (or) # git add .  (to add all available files in workspace)
+5.	To move a file from index area to local repo
+# git commit -m “<commit_message>”
+6.	To move a modified file from workspace to local repo
+# git commit -am “<commit_message>”
+7.	To see the current status of a branch
+# git status
+8.	To view the full details of files present in local repo i.e; commit Id, author details, date, and commit message of each file
+# git log  
+     (or)
+# git log  - -oneline   ( to displays first 7 digits of each commit ID's  with commit message) (use -5 or any other number to display the limited logs that given)
+     (or)
+# git log - -pretty=oneline ( to display full commit Ids with commit messages)
+9.	To push local data to remote repo
+# git push origin <branch_name>
+                  (or)
+# git push - -all origin  (to push all local branches data in remote branches)
+10.	To get updated files from remote repo to local repo
+# git pull     (or) # git fetch + # git merge
+11.	To connect to a remote repository
+# git remote add origin <GitHub URL>
+12.	To list all currently configured remote repositories
+# git remote -v
+13.	To switch from one branch to another
+# git checkout <branch name>
+14.	To create a branch
+# git branch <new branch name>
+15.	To create and checkout to a branch at a time
+# git checkout -b <new branch name>
+16.	To see the all branches and know current branch
+# git branch 
+17.	To delete a branch in local repo
+# git branch -d <branch name>
+18.	To delete a branch in remote repo  (applicable after 17th command execution)
+# git push origin :<deleted branch name>
+19.	To merge any branch into your active branch
+# git merge <name of the branch to merge>
+20.	To view the merge conflicts
+# git diff
+21.	To preview changes b/n two branches before merging
+# git diff <source branch> <target branch>
+22.	To move a file from local repo to index area
+# git reset - -soft <previous commit id>
+23.	To abort merging process
+# git merge - -abort
+24.	To continue merging process
+# git merge - -continue
+25.	To know the current branch is merged with which branches
+# git branch - -merged
+26.	To know the current branch is not merged with which branches
+# git branch - -no-merged
+27.	To create a tag
+# git tag <new tag name>
+28.	To display the all tags that created 
+# git tag
+29.	To create a tag with only up to some commits.
+# git tag -a <new tag name> <commit Id>  -m “<message>”
+30.	To push a tag to remote repo
+# git push origin <tag name>
+31.	To delete a tag in local repo
+# git tag -d <tag name>
+32.	To delete a tag in remote repo
+# git push origin :<tag name>
+33.	To save a file temporarily in stash area
+# git stash save <new name>
+34.	To list all stash files
+# git stash list
+35.	To unstash the file
+# git stash pop <stash Id>
+36.	To unstash the file in another way but here the file will still available in stash area
+# git stash apply <stash id>
+             (&)
+# git stash drop <stash id> (to remove the stash file from stashing area)
+37.	To list all the branches present in remote repo
+# git branch -r
+38.	To list all the branches present in local and remote repos
+# git branch -a
+39.	To make shortcut command (alias) for specific command
+# git config - -global alias.log10 “log - -oneline -10”
+40.	To remove shortcut command
+# git config - -global - -unset alias.log10 “log - -oneline -10”
+41.	To edit global configuration file in vi editor
+# git config - -global - -edit 
+42.	Compare b/n workspace and local repo
+# git diff - -
+43.	Compare b/n staging and local repo
+# git diff - -cached
+44.	To get help for a specific command
+# git help <command name>
+45.	To see the differences b/n two commit ID's 
+# git diff <commit id1> <commit id2>
+46.	To see details and content of commit Id
+# git show <commit id>
+47.	To make last few commits as one commit using squash method 
+# git rebase -i HEAD~4     ( here I want to make last 4 commits as one commit )
+   After hitting above command Something like this should show in your editor:
+pick 43432432 my commit message to preserve
+          pick 43132132 my other commit message
+          pick 12353434 some commit message
+          pick 64554234 update something
+          ....
+        If you’d like to squash all commits into “my commit message to preserve”, then change it into this:
+          pick 43432432 my commit message to preserve
+          f 43132132 my other commit message
+          f 12353434 some commit message
+          f 64554234 update something
+          ....
+ Here all the commits started with f (squash) will be moved to commit starting with pick.
+48.	To undo the git rebase
+     # git reset --hard ORIG_HEAD  ( to undo last rebase )
+     # git reset --hard HEAD@{5}  ( to undo upto particular changes )
+
+
+

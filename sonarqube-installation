@@ -1,0 +1,24 @@
+How to install SonarQube in AWS Linux Server 
+•	Search in browser as SonarQube for AWS Linux and also read the prerequisites before installation.
+Prerequisites:  
+       Hardware : m5.large is better to run sonarqube and it needs minimum 2GB RAM and 8 cores of CPU ( # cat /proc/cpuinfo to know the hardware details )
+       Software : Java is mandatory to run sonarqube  
+•	Run the following commands to install SonarQube
+# wget -o /etc/yum.repos.d/sonar.repo  http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo
+# yum install sonar -y
+# service sonar start ( to start the sonarqube service )
+# service sonar status ( to know the sonar is running or not )
+# ps -ef | grep -I sonar ( to know the sonar process is running or not )
+# vi /opt/sonar/logs/sonar.log  ( to know process is running or not )
+   Ex : if process is running, output will be display as below in the bottom of the sonar.log file)
+2018.10.02 02:47:24 INFO  app[][o.s.a.SchedulerImpl] Process[ce] is up
+2018.10.02 02:47:24 INFO  app[][o.s.a.SchedulerImpl] SonarQube is up  
+# vi /opt/sonar/conf/sonar.properties ( file to change port number and some configurations)
+# netstat -alntp | grep -I 9000 ( to see the port number 9000 is running or not )
+# vi /opt/sonar/
+# use the public IP of the server and port number  on browser to access the sonarqube. 
+   Ex : 192.168.0.2:9000    ( 9000 is default port number )
+•	In browser signup on first time using
+•	Go to my account  select security option  in generate tokens give a name on empty column and click on generate and enter the credentials and generate the token and save it for further use.
+
+

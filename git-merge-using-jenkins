@@ -1,0 +1,121 @@
+---------Git Merge using Jenkins---------------
+1--> create a new job as free style project and select Git in SCM category and give git url and give branch name to checkout. In build category 
+select execute shell and in this enter these commands
+    git branch    ( to list the available branches and current active branch )
+    ls -latr|wc -l    ( to know count of files )
+    git checkout devops  ( to move to devops branch from master, we give master in git option in SCM category )
+    git branch  
+    ls -latr|wc -l
+    git merge aws    ( to merge the aws branch with devops branch )
+    git status
+    ls -latr|wc -l
+    git push origin devops  (to push local changes to remote repo )
+
+--------------------------------------:output:-----------------------------------------
+
+Started by user krishna
+Building in workspace /jenkins/workspace/git_merge
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:krishnapolineni/krishnadevops.git # timeout=10
+Fetching upstream changes from git@github.com:krishnapolineni/krishnadevops.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress git@github.com:krishnapolineni/krishnadevops.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 2da703c4d60f3fbc216daf0fcdd782410daee3f6 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2da703c4d60f3fbc216daf0fcdd782410daee3f6
+Commit message: "gaegaeg"
+ > git rev-list --no-walk 2da703c4d60f3fbc216daf0fcdd782410daee3f6 # timeout=10
+[git_merge] $ /bin/sh -xe /tmp/jenkins5194824357598837159.sh
++ git branch
+* (HEAD detached at 2da703c)
+  aws
+  aws-test
+  devops
+  krish
++ ls -latr
++ wc -l
+78
++ git checkout devops
+Previous HEAD position was 2da703c... gaegaeg
+Switched to branch 'devops'
+Your branch is up-to-date with 'origin/devops'.
++ git branch
+  aws
+  aws-test
+* devops
+  krish
++ ls -latr
++ wc -l
+56
++ git merge aws
+Updating 7174923..89b75e3
+Fast-forward
+ hello1 => 32_TESTFILE.TXT |  0
+ hello2 => 33_TESTFILE.TXT |  0
+ hello3 => 34_TESTFILE.TXT |  0
+ hello4 => 35_TESTFILE.TXT |  0
+ hello5 => 36_TESTFILE.TXT |  0
+ 37_TESTFILE.TXT           |  0
+ 38_TESTFILE.TXT           |  0
+ 39_TESTFILE.TXT           |  0
+ 40_TESTFILE.TXT           |  0
+ 41_TESTFILE.TXT           |  0
+ 42_TESTFILE.TXT           |  0
+ 43_TESTFILE.TXT           |  0
+ 44_TESTFILE.TXT           |  0
+ 45_TESTFILE.TXT           |  0
+ 46_TESTFILE.TXT           |  0
+ 47_TESTFILE.TXT           |  0
+ 48_TESTFILE.TXT           |  0
+ 49_TESTFILE.TXT           |  0
+ 50_TESTFILE.TXT           |  0
+ javatest1.java            | 50 +++++++++++++++++++++++++++++++++++++++++++++
+ k2                        |  2 +-
+ leela                     | 24 ++++++++++++++++++++--
+ merge                     |  4 ++++
+ newjava.java              | 52 +++++++++++++++++++++++++++++++++++++++++++++++
+ test2                     |  9 ++++++++
+ test4                     |  8 ++++++++
+ 26 files changed, 146 insertions(+), 3 deletions(-)
+ rename hello1 => 32_TESTFILE.TXT (100%)
+ rename hello2 => 33_TESTFILE.TXT (100%)
+ rename hello3 => 34_TESTFILE.TXT (100%)
+ rename hello4 => 35_TESTFILE.TXT (100%)
+ rename hello5 => 36_TESTFILE.TXT (100%)
+ create mode 100644 37_TESTFILE.TXT
+ create mode 100644 38_TESTFILE.TXT
+ create mode 100644 39_TESTFILE.TXT
+ create mode 100644 40_TESTFILE.TXT
+ create mode 100644 41_TESTFILE.TXT
+ create mode 100644 42_TESTFILE.TXT
+ create mode 100644 43_TESTFILE.TXT
+ create mode 100644 44_TESTFILE.TXT
+ create mode 100644 45_TESTFILE.TXT
+ create mode 100644 46_TESTFILE.TXT
+ create mode 100644 47_TESTFILE.TXT
+ create mode 100644 48_TESTFILE.TXT
+ create mode 100644 49_TESTFILE.TXT
+ create mode 100644 50_TESTFILE.TXT
+ create mode 100644 javatest1.java
+ create mode 100644 newjava.java
+ create mode 100644 test2
+ create mode 100644 test4
++ git status
+On branch devops
+Your branch is ahead of 'origin/devops' by 39 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	kittu~HEAD
+
+nothing added to commit but untracked files present (use "git add" to track)
++ ls -latr
++ wc -l
+74
+Finished: SUCCESS

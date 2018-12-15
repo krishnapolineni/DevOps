@@ -1,0 +1,104 @@
+ansible playbooks
+-------------------
+
+--> in playbooks directory located in /etc/ansible/playbook run command as # ansible-galaxy <new dir. name> init , this command will create ansible 
+  roles in that new directory as below
+     
+       +-- defaults
+       ¦   +-- main.yml
+       +-- files
+       +-- handlers
+       ¦   +-- main.yml
+       +-- meta
+       ¦   +-- main.yml
+       +-- README.md
+       +-- tasks
+       ¦   +-- main.yml
+       +-- templates
+       +-- tests
+       ¦   +-- inventory
+       ¦   +-- test.yml
+       +-- vars
+           +-- main.yml
+
+--> also create a directory as environment and in that create directories as how many environments you want as below
+
+  env
+   +-- dev
+   ¦   +-- group_vars
+   ¦   ¦   +-- web          ( this file contains simple text like varible name and it's values like Ex: list_param: true and this value will be copy to all remote machines ) 
+   ¦   +-- hosts
+   ¦   +-- templates
+   ¦       +-- server.xml.j2    ( copy the server.xml file from its absolute path and rename it by adding .j2 as shown and write variable name in that file as shown below)
+   ¦       +-- web.xml.j2
+   +-- test
+               (  <param-name>listings</param-name>
+            <param-value>{{ list_param }}</param-value>   here list_param is environmental variable and can change the value by modifying the file 
+        located in group_vars ) 
+              
+   in the above scenario there are dev and test environments and in dev there are sub directories such as group_vars which has a files that contains 
+   variables and it's values. values we give in this file will change in remote machines. hosts file contains ip or domain name of remote machines.
+   template directory contains .j2 files which are replicas of configuration files or any other files which has to change frequently. 
+ --> All the above steps has to be done manually.
+
+--> create a playbook and write as below
+            ---
+            - name: using template
+              hosts: "{{host}}"   ( should give the host name to execute the changes )
+              vars_files:
+               - env/{{env}}/group_vars/web   (path of variable file that has to execute )
+              roles:
+               - krish  ( it will trigger krish directory present in roles for further process and in tasks directory present in krish role 
+        there is main.yml file and has to write some plays in it as shown below )
+             ---
+             - name: simple echo
+               debug:
+               msg: "Connection check 1 2 3 ..."
+             - name: conifg modification
+               template:
+                 src: env/{{env}}/templates/web.xml.j2
+                 dest: /etc/tomcat/web.xml
+                 mode: 0644
+         
+--> finally execute command as #ansible-playbook test.yml -i env/dev/hosts -e "host=web env=dev"  to run all the above process to configure 
+   the config located in remote machines.
+
+----------------------------------------------------------------
+tree structure of my ansible playbooks directory
+
+.
++-- env
+¦   +-- dev
+¦   ¦   +-- group_vars
+¦   ¦   ¦   +-- web
+¦   ¦   +-- hosts
+¦   ¦   +-- templates
+¦   ¦       +-- server.xml.j2
+¦   ¦       +-- web.xml.j2
+¦   +-- test
++-- roles
+¦   +-- krish
+¦       +-- defaults
+¦       ¦   +-- main.yml
+¦       +-- files
+¦       +-- handlers
+¦       ¦   +-- main.yml
+¦       +-- meta
+¦       ¦   +-- main.yml
+¦       +-- README.md
+¦       +-- tasks
+¦       ¦   +-- main.yml
+¦       +-- templates
+¦       +-- tests
+¦       ¦   +-- inventory
+¦       ¦   +-- test.yml
+¦       +-- vars
+¦           +-- main.yml
++-- test.yml
+
+
+         
+
+   
+
+      

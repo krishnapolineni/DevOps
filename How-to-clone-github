@@ -1,0 +1,47 @@
+How to clone git repo using Jenkins
+
+•	Go to Jenkins home page and click on new item to create new job.
+•	Then go to SCM part and select GIT option.
+•	Fill the details as shown in image.
+•	 
+•	In the above image SSH URL is used and can also use https URL
+•	Branch to build is used to which branch you want to checkout , by default it is given by master and can change as per requirement.
+•	After giving all these details save this configuration and click on build now option to run this job.
+•	To know the output go to console output and there it displays output as shown in below.
+
+output
+Started by user krishna
+Building in workspace /jenkins/workspace/test1
+Cloning the remote Git repository
+Cloning repository git@github.com:krishnapolineni/krishnadevops.git
+ > git init /jenkins/workspace/test1 # timeout=10
+Fetching upstream changes from git@github.com:krishnapolineni/krishnadevops.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:krishnapolineni/krishnadevops.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url git@github.com:krishnapolineni/krishnadevops.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url git@github.com:krishnapolineni/krishnadevops.git # timeout=10
+Fetching upstream changes from git@github.com:krishnapolineni/krishnadevops.git
+ > git fetch --tags --progress git@github.com:krishnapolineni/krishnadevops.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0efcc5cf2b4e7fc95114c5d2f598d0a999b52f7e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0efcc5cf2b4e7fc95114c5d2f598d0a999b52f7e
+Commit message: "build number_49"
+First time build. Skipping changelog.
+Finished: SUCCESS
+
+
+
+Procedure to integrate GitHub with Jenkins (SSH)
+
+1--> Run ssh - keygen command as jenkins user. It will create .ssh in Jenkins home directory ( i.e, /var/lib/jenkins this is mine ) and copy the
+     id_rsa.pub key present in .ssh directory.
+    copying the code: cat /var/lib/jenkins/.ssh/id_rsa.pub   by using this command it will display a encrypted code and copy that code.
+
+2--> Go to GitHub home page in browser then go to settings ---> select Deploy keys option, there enter title what u want and paste the encrypted     
+     public key in below and tick for allow write access. then finally press add key button in bottom.   
+
+3--> Now use ssh git url in Jenkins or Linux server
+

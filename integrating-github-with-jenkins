@@ -1,0 +1,19 @@
+Integrating Jenkins with Github
+
+1-> Create a new job in Jenkins 
+2-> In job configure go to  SCM and select git. Give github url in there and add branch in below column if any other than master you want to give. 
+3-> In build triggers select poll SCM and give the cron format input ( * * * * * ) to build the project as per requirement.
+  
+Cron Format : *(minutes 0-59) *(hours in a day 0-23) *(Day in a month 1-31) *(Month in a year 1-12) *(day in a week 0-6)
+Ex: */5 * * * *  ( to run on every five minutes)
+    * 14 * * * ( to run on everyday at 2pm )
+    * * 1 * * ( to run on every month 1st day )
+    * * * 5 * ( to run on every may )
+    * * * * 0or7 ( to run on every Sunday )
+    20 20 12 11 * ( to run on every 12th November at 8:20 pm )   
+
+
+Build periodically : It triggers GitHub according to cron time and builds the job even if any changes occur or not in github.
+Poll SCM : It triggers GitHub according to cron time and search for new commit, if any new commit found it will build automatically otherwise it won't build.
+
+
