@@ -1,0 +1,26 @@
+==================================CI Build====================================
+==>general
+ --> enabled project based security for giving permissions to specific users only for this job.
+
+==> SCM
+ --> git is selected to get code from remote repo and given url will take to GitHub and branches to build option will result checkout to a 
+  specific branch given.
+ --> in additional behaviours time out minutes is given as 180 means if cloning is not done in 180 min job will get stop.
+
+==> Build environments
+ -->add timestamp in console o/p will add time at executing the command beside the output.
+ -->inject environmental variables to the build process will take environmental variables present in the given file and it will inject to build process.
+
+==> build
+  --> execute shell: 
+    1) npm commands to compile using maven
+    2) to view the content present in mr_pp_main_build_no file
+    3) executing configurable_pipeline.sh with some variables like MR and $version_to_deploy
+    4) copying the file and display the contents in it.
+    5) adding build no in mr_pp_main_build_no file 
+    6) adding build number in mr_current_build_no
+    
+==> post build actions
+  --> editable email notication : to send email to the respective team with content and subject
+  --> trigger parameterized build on other projects : it will build other projects if this build is stable.    
+

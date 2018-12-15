@@ -1,0 +1,21 @@
+Branching Stratagies:
+
+- releasing branch: is called master branch. no developer code commits and dvelop here.
+
+- integration branch: 
+
+- sprint branch: an agile sprints we will do both day & night builds.
+
+- future/task branch: basically it is taken from the latest integration that happens.
+
+- changes done at future branch then it will merge to the integration branch. once a day.
+
+- night build done on integration branch.
+
+- once integration branch stable build then it will arrange to the master or release branch.
+
+- hotfix branch: customer raise the bug.
+
+- selinium testing: ui testing
+
+- Jmeter testing: performance testing.

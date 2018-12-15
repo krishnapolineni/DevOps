@@ -1,0 +1,126 @@
+
+
+                            
+
+
+
+Objective
+   
+     To serve the organization as an efficient DevOps Engineer which will enable to contribute the acquired technical skills & enhance further technical abilities which can result in continuous learning that simulate professional and personal growth.
+
+Professional Summary
+
+•	Having 4 years of Experience in Implementing Organization DevOps strategy in Linux and Windows servers in Agile environment.
+•	Experience in branching, Stashing, Rebasing, Merging and maintaining the version across the environments working on SCM tools like GIT, GITHUB.
+•	Launching and configuring of Amazon EC2(AWS) Cloud Servers using AMI's.
+Creating Jenkins CI pipelines.
+•	Good Knowledge on protocols like FTP, SSH and HTTP.
+•	Monitoring and Maintaining the Application Servers using Nagios.
+•	Integrating SonarQube with Jenkins for code quality check.
+•	Hands on experience  with configuration management tool  Ansible.
+•	Having good experience on Docker in creating custom Docker Images using Docker files.
+•	Installing and configuring Jenkins on a Linux machine and created a Master and Slave configuration to implement multiple parallel builds through a build form.
+•	Working knowledge on virtual systems like Docker and VMWare technologies.
+•	Skills in applying Continuous Integration, Continuous Deployment and Continuous Delivery processes & tools [ Example: Git, Ant, Ansible, Maven, Jenkins, Apache Tomcat, Shell Scripting, Docker.]
+•	Knowledge on creating EC2 instances, AMIs, Volumes, Snapshots, Elastic Block Storages and Elastic Load Balancer (ELBs) in Amazon Web Services (AWS).
+
+Technical Skills
+
+      Web/Application Servers		:   Apache, Tomcat
+      Containerization			:   Docker
+      Monitoring Tools			:   Nagios
+      Configuration Management	:   Ansible
+      CI/CD Tools			:   Jenkins, SonarQube
+      Operating Systems                          :   Linux, Windows
+      Version Control Systems		:   Git, Github
+      Build Tools				:   Maven
+      Scripting Language		:   Shell, YAML
+      Cloud Technologies		:   Amazon Web Services (EC2, EBS, VPC, ELB, AMI)                                                                                                                                                                                                                            
+
+
+Educational Qualifications
+
+•	B.Tech with specialization in Mechanical Engineering ( ME ) from VBIT, PRODDATUR, ANDHRA PRADESH, 2010-2014.
+
+Professional Experience
+
+•	Currently working as DevOps Engineer at Oracle India Pvt. Ltd., Since Dec 2014 to Till date.
+
+Work Experience
+
+Project #1:
+Role  :    System Engineer
+Duration: Aug 2017 - Present
+Responsibilities:
+
+•	Creating the CI/CD pipeline setup for the application hosted in the Linux with Code analysis, Code coverage, Building the application, managing the build in Jenkins. 
+•	Experience with SCM tools like Git for branching, merging, tagging , stash, reset, rebase and version management.
+•	Basic Configurations, changing the home directory, create jobs, create Users, Manage and Assign Roles to the users in Jenkins.
+•	Implemented Continuous Integration and deployed into Tomcat Application Server using Jenkins.
+•	Configuring a CRON Jobs for continuous deployments to DEV and QA Environments by picking up builds from Jenkins using Ansible.
+•	Performed branching, merging & tagging concepts in version control tool GIT.
+•	Installation and up gradation of Ansible and make sure nodes are getting converge with Ansible server.
+•	Create and configure new jobs for each and every module in Jenkins.
+•	Performed and deployed Builds for various Environments like QA, Integration, UAT and Productions Environments.
+•	Maintaining and uploading artifacts in NEXUS repository for maven builds.
+•	Documenting all the new automation tasks and upload them in share point.
+•	Developing Ansible Playbooks for different scenarios to manage the infrastructure and integrating with CI (continuous integration), CD (continuous deployment).
+•	Setting up Continuous Integration and Continuous Delivery pipeline with GitHub, Maven, and Jenkins.
+•	Experience of merging changes from release branch to depot and resolving the conflicts occurred at the time of merge process. 
+•	Creating WAR files by using Jenkins and Maven.
+•	Configuring CRON Jobs for executing daily activities such as Backup/Archive etc in Ansible.
+•	Creating and maintaining Project related documentation.
+•	Support the automating code builds and deploy process through CI tool such as Jenkins on Tomcat Application Server.
+•	Configure Elastic Load Balancer (ELB) for distribution incoming application traffic across multiple EC2 Instances.
+•	Having good experience on Docker in creating custom Docker Images using Docker files. Creating Docker Containers, Data Volumes and Port Expose.
+•	Resolving  merge conflicts.
+•	Creating EC2 Instances and Creating AMI for different region.
+
+Environment: Jenkins, GIT, GIT Hub, Ansible, Docker, Tomcat, Linux, Shell Script, AWS .
+
+Project #2:
+Role:   Operations Engineer    
+Duration: Mar 2016 – July 2017
+Responsibilities:
+•	Developing Ansible playbooks for managing the applications/OS configuration by integrating and Verifying with Jenkins plugins and deploying the applications into the Linux environment. 
+•	Installation and configuration of GIT, merging code from development branch to master branch and make it ready for deployment. 
+•	Use Jenkins for integration and deployment of code across various environments using Ansible. Implemented CI using Jenkins, which tracks the source code changes.
+•	Installation, configuration and maintaining the Continuous integration in linux environments that helps to maintain the integrity of the code and decrease the downtime.
+•	Installation of patches and packages using RPM and YUM in Red hat Linux.
+•	Debugged Build failures and worked with developers and QA people to resolve the related issues. 
+•	Configured a continuous integration process and interface with the operations team to ensure project artifacts are deployed automatically to various environments using Jenkins.
+•	Worked with different teams for the resolution of the production issues; performed service operations and extended support.
+•	Launching and configuring of Amazon EC2 Servers using AMI and configuring the servers for specified applications using Jenkins.
+•	Developed Scripts for services to start, stop, restart and remove.
+•	OS upgrades and installation of third party software packages and patches as per requirement.
+•	Installation of packages using RPM and YUM in Red hat Linux.
+•	Scheduling and Automatic recurring execution using CRON jobs.
+•	Automating the infrastructure as a code using Ansible. Developed and Maintained Recipes for Configuration Management using Playbooks.
+
+Environment:  Ansible, GIT, Jenkins, Shell Script, Putty, Git Hub, Maven, AWS
+
+Project #3:
+Role:   Linux Admin    
+Duration: Dec 2014 – Feb 2016
+Responsibilities:
+•	Creating LVM and Extending size of LVM either by adding a new disk or by increasing size of existing disk. 
+•	Resolving file system full errors in application and system level. 
+•	Data Compressing, Backup and recovery using tar command
+•	Experience in Package / Patch administration.
+•	Taking the file system and disk full back up using dd & dump tools. 
+•	Provide the sudo access to users by editing "sudoers" file. 
+•	  Changing Ownership and Permissions of a file/directory.
+•	  Automation of jobs using AT and CRON, Managing Swap space.
+•	  Install/upgrade/Uninstall packages using rpm and yum.
+•	Mounting, unmounting of file systems through /etc/fstab configuration file.
+•	Setting up the thresholds on the parameters CPU/Memory/Disk/Network and alerting the users when the usage reaches the thresholds. 
+•	Troubleshooting the file flow issues raised by the users.
+
+Declaration
+•	
+•	
+  I hereby declare that the above furnished details are true to the best of my knowledge.
+	                                      
+  Place   :  Bangalore                                                                                             Yours truly	
+  Date	 :  15/12/2018                  					       LEELA KRISHNA 
+

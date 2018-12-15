@@ -1,0 +1,14 @@
+Self-Definition:        
+•	Currently working for Digikraft Technologies Pvt Ltd.
+•	Total I have 4 years of experience in IT and 2.9 Years of experience in Devops tools like GIT, GITHUB, MAVEN, APACHE,  TOMCAT, JENKINS, NAGIOS, ANSIBLE, DOCKER, LINUX, SHELL SCRIPTING.
+•	Currently I am working for the client Oracle India Pvt. Ltd. as System Engineer.
+•	In this project, my Roles and responsibilities are, as a Devops Engineer, I  support and maintain the infrastructure 
+•	Whenever developer commits their code into their local repository, I push that code into Github and I integrate Github with Jenkins  and in Jenkins I create the jobs for compile, test, package , install and deploy to either Binary repo or Pre-prod or Prod repositories based on requirement.
+•	Collaborating with the teams and working with relevant tickets.
+•	Attending for the SPRINT calls daily/weekly basis.
+•	I am working on Configuration management tool like ANSIBLE for Infrastructure Development and maintenance purpose using playbooks.
+•	In this, Install/upgrade/remove the applications into remote machines, Copy the files, Create users, Secure the Sensitive data, etc  using Ansible Playbooks.
+•	Recently we are Started with Docker Containerization from last 3 months onwards. In this I am working on Docker files like develop the Docker images using Existing base images and adding some content to those images and running the containers, Expose the ports and Share the Volume of one Container to another, etc.
+•	I write the Scripting for the jobs like to run, deploy and test based on the requirement.
+
+

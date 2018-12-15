@@ -1,0 +1,44 @@
+Web server:
+A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. Dedicated computers and appliances may be referred to as Web servers as well.
+The process is an example of the client/server model. All computers that host Web sites must have Web server programs. Leading Web servers include Apache (the most widely-installed Web server), Microsoft's Internet Information Server (IIS) and nginx (pronounced engine X) from NGNIX. Other Web servers include Novell's NetWare server, Google Web Server (GWS) and IBM's family of Domino servers.
+Web servers often come as part of a larger package of Internet- and intranet-related programs for serving email, downloading requests for File Transfer Protocol (FTP) files, and building and publishing Web pages. Considerations in choosing a Web server include how well it works with the operating system and other servers, its ability to handle server-side programming, security characteristics, and  the particular publishing, search engine and site building tools that come with it.
+Examples:
+1)	Apache Tomcat
+2)	Nginx from NGNIX
+3)	Google Web Server(GWS)
+4)	Microsoft’s Internet Information Server(IIS)
+5)	IBM's family of Domino servers
+
+Application Server:
+An application server is a server program in a computer in a distributed network that provides the business logic for an application program. The application server is frequently viewed as part of a three-tier application, consisting of a graphical user interface (GUI) server, an application (business logic) server, and a database and transaction server. More descriptively, it can be viewed as dividing an application into:
+1.	A first-tier, front-end, Web browser-based graphical user interface, usually at a personal computer or workstation
+2.	A middle-tier business logic application or set of applications, possibly on a local area network or intranet server
+3.	A third-tier, back-end, database and transaction server, sometimes on a mainframe or large server
+Older, legacy application databases and transaction management applications are part of the back end or third tier. The application server is the middleman between browser-based front-ends and back-end databases and legacy systems.
+In many usages, the application server combines or works with a Web (Hypertext Transfer Protocol) server and is called a Web application server. The Web browser supports an easy-to-create HTML-based front-end for the user. The Web server provides several different ways to forward a request to an application server and to forward back a modified or new Web page to the user. These approaches include the Common Gateway Interface (CGI), FastCGI, Microsoft's Active Server Page, and the Java Server Page. In some cases, the Web application servers also support request "brokering" interfaces such as CORBA Internet Inter-ORB Protocol (IIOP).
+Examples:
+1)	Glassfish. 
+2)	JBoss Enterprise Application Platform. 
+3)	Websphere
+4)	Weblogic
+5)	Wildfly. 
+6)	Apache Tomcat. 
+Servlets
+Jsps
+Html
+.
+.
+Servelets
+Jsps
+Html
+Ejbs
+Jms
+.
+.
+
+web server                                                 App server
+1)	App server consists inbuilt web server.
+2)	Web server  runs only web application.
+3)	App server runs enterprise application and runs any technology from j2ee.
+4)	
+

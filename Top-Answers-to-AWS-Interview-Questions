@@ -1,0 +1,592 @@
+Top Answers to AWS Interview Questions
+1. Compare AWS and OpenStack
+Criteria	AWS	OpenStack
+License	Amazon proprietary	Open Source
+Operating System	Whatever cloud administrator provides	Whatever AMIs provided by AWS
+Performing repeatable operations	Through templates	Through text files
+2. What is AWS?
+AWS (Amazon Web Services) is a platform to provide secure cloud services, database storage, offerings to compute power, content delivery, and other services to help business level and develop.
+Learn more about AWS in this insightful AWS Tutorial!
+3. What is the importance of buffer in Amazon Web Services?
+A buffer will synchronize different components and makes the arrangement additional elastic to a burst of load or traffic. The components are prone to work in an unstable way of receiving and processing the requests. The buffer creates the equilibrium linking various apparatus and crafts them effort at the identical rate to supply more rapid services.
+Learn AWS in 16 hrs. Download e-book now
+GET CERTIFIED
+4. What is the way to secure data for carrying in the cloud?
+One thing must be ensured that no one should seize the information in the cloud while data is moving from point one to another and also there should not be any leakage with the security key from several storerooms in the cloud. Segregation of information from additional companies’ information and then encrypting it by means of approved methods is one of the options.
+Amazon Web Services offers you a secure way of carrying data in the cloud. Looking to master AWS platform? Check this comprehensive AWS Certification Training.
+5. Name the several layers of Cloud Computing.
+Here is the list of layers of the cloud computing
+•	PaaS – Platform as a Service
+•	IaaS – Infrastructure as a Service
+•	SaaS – Software as a Service
+6. What are the components involved in Amazon Web Services?
+There are 4 components involved and are as below.Amazon S3: with this, one can retrieve the key information which are occupied in creating cloud structural design and amount of produced information also can be stored in this component that is the consequence of the key specified.Amazon EC2: helpful to run a large distributed system on the Hadoop cluster. Automatic parallelization and job scheduling can be achieved by this component.Amazon SQS: this component acts as a mediator between different controllers. Also worn for cushioning requirements those are obtained by the manager of Amazon.Amazon SimpleDB: helps in storing the transitional position log and the errands executed by the consumers.
+Interested in Learning AWS? Click Here
+7. Distinguish between scalability and flexibility
+The aptitude of any scheme to enhance the tasks on hand on its present hardware resources to grip inconsistency in command is known as scalability. The capability of a scheme to augment the tasks on hand on its present and supplementary hardware property is recognized as flexibility, hence enabling the industry to convene command devoid of putting in the infrastructure at all.
+8. Name the various layers of the cloud architecture
+There are 5 layers and are listed below
+•	CC- Cluster Controller
+•	SC- Storage Controller
+•	CLC- Cloud Controller
+•	Walrus
+•	NC- Node Controller
+9. Define auto-scaling.
+Auto- scaling is one of the remarkable features of AWS where it permits you to arrange and robotically stipulation and spin up fresh examples without the requirement for your involvement. This can be achieved by setting brinks and metrics to watch. If those entrances are overcome, a fresh example of your selection will be configured, spun up and copied into the weight planner collection.
+Download AWS Interview questions asked by top MNCs in 2017 ?
+  
+10. Which automation gears can help with spinup services?
+The API tools can be used for spinup services and also for the written scripts. Those scripts could be coded in Perl, bash or other languages of your preference. There is one more option that is patterned administration and stipulating tools such as a dummy or improved descendant. A tool called Scalr can also be used and finally we can go with a controlled explanation like a Rightscale.
+11. Is it possible to scale an Amazon instance vertically? How?
+Yes. This is an incredible characteristic of cloud virtualization and AWS. Spinup is a huge case when compared to the one which you are running with. Let up the instance and separate the root EBS volume from this server and remove. Next, stop your live instance, remove its root volume. Note down the distinctive device ID and attach root volume to your new server and start it again. This is the way to scaling vertically in place.
+Find out how AWS can scale vertically by going through the AWS Tutorial.
+12. How the processes start, stop and terminate works? How?
+Starting and stopping of an instance: If an instance gets stopped or ended, the instance functions a usual power cut and then change over to a clogged position. You can establish the case afterward since all the EBS volumes of Amazon remain attached. If an instance is in stopping state, then you will not get charged for additional instance.
+Finishing the instance: If an instance gets terminated it tends to perform a typical blackout, so the EBS volumes which are attached will get removed except the volume’s deleteOnTermination characteristic is set to zero. In such cases, the instance will get removed and cannot set it up afterward.
+13. What is the relation between an instance and AMI?
+AMI can be elaborated as Amazon Machine Image, basically, a template consisting software configuration part. For example an OS, applications, application server. If you start an instance, a duplicate of the AMI in a row as an unspoken attendant in the cloud.
+Master AWS with the industry-designed AWS training course!
+
+
+
+
+
+
+
+If you're looking for a cloud expert, specifically someone who knows Amazon Web Services and EC2, you'll want to have a battery of questions to ask them to assess their knowledge.  As with any technical interview focus on concepts and big picture.  As the 37Signals folks like to say "hire for attitude, train for skill".  Absolutely!
+1. Explain Elastic Block Storage?  What type of performance can you expect?  How do you back it up?  How do you improve performance?
+EBS is a virtualized SAN or storage area network.  That means it is RAID storage to start with so it's redundant and fault tolerant.  If disks die in that RAID you don't lose data.  Great!  It is also virtualized, so you can provision and allocate storage, and attach it to your server with various API calls.  No calling the storage expert and asking him or her to run specialized commands from the hardware vendor.
+Performance on EBS can exhibit variability.  That is it can go above the SLA performance level, then drop below it.  The SLA provides you with an average disk I/O rate you can expect.  This can frustrate some folks especially performance experts who expect reliable and consistent disk throughput on a server.  Traditional physically hosted servers behave that way.  Virtual AWS instances do not.
+Backup EBS volumes by using the snapshot facility via API call or via a GUI interface like elasticfox.
+Improve performance by using Linux software raid and striping across four volumes.
+2. What is S3?  What is it used for?  Should encryption be used?
+S3 stands for Simple Storage Service.  You can think of it like ftp storage, where you can move files to and from there, but not mount it like a filesystem.  AWS automatically puts your snapshots there, as well as AMIs there.  Encryption should be considered for sensitive data, as S3 is a proprietary technology developed by Amazon themselves, and as yet unproven vis-a-vis a security standpoint.
+3. What is an AMI?  How do I build one?
+AMI stands for Amazon Machine Image.  It is effectively a snapshot of the root filesystem.  Commodity hardware servers have a bios that points the the master boot record of the first block on a disk.  A disk image though can sit anywhere physically on a disk, so Linux can boot from an arbitrary location on the EBS storage network.
+Build a new AMI by first spinning up and instance from a trusted AMI.  Then adding packages and components as required.  Be wary of putting sensitive data onto an AMI.  For instance your access credentials should be added to an instance after spinup.  With a database, mount an outside volume that holds your MySQL data after spinup as well.
+4. Can I vertically scale an Amazon instance?  How?
+Yes.  This is an incredible feature of AWS and cloud virtualization.  Spinup a new larger instance than the one you are currently running.  Pause that instance and detach the root ebs volume from this server and discard.  Then stop your live instance, detach its root volume.  Note the unique device ID and attach that root volume to your new server.   And the start it again.  Voila you have scaled vertically in-place!!
+5. What is auto-scaling?  How does it work?
+Autoscaling is a feature of AWS which allows you to configure and automatically provision and spinup new instances without the need for your intervention.  You do this by setting thresholds and metrics to monitor.  When those thresholds are crossed a new instance of your choosing will be spun up, configured, and rolled into the load balancer pool.  Voila you've scaled horizontally without any operator intervention!
+6. What automation tools can I use to spinup servers?
+The most obvious way is to roll-your-own scripts, and use the AWS API tools.  Such scripts could be written in bash, perl or other language or your choice.  Next option is to use a configuration management and provisioning tool like puppet or better it's successor Opscode Chef.  You might also look towards a tool like Scalr.  Lastly you can go with a managed solution such as Rightscale.
+7. What is configuration management?  Why would I want to use it with cloud provisioning of resources?
+Configuration management has been around for a long time in web operations and systems administration.  Yet the cultural popularity of it has been limited.  Most systems administrators configure machines as software was developed before version control - that is manually making changes on servers.  Each server can then and usually is slightly different.  Troubleshooting though is straightforward as you login to the box and operate on it directly.  Configuration management brings a large automation tool into the picture, managing servers like strings of a puppet.  This forces standardization, best practices, and reproducibility as all configs are versioned and managed.  It also introduces a new way of working which is the biggest hurdle to its adoption.
+Enter the cloud, and configuration management becomes even more critical.  That's because virtual servers such as amazons EC2 instances are much less reliable than physical ones.  You absolutely need a mechanism to rebuild them as-is at any moment.  This pushes best practices like automation, reproducibility and disaster recovery into center stage.
+8. Explain how you would simulate perimeter security using Amazon Web Services model?
+Traditional perimeter security that we're already familiar with using firewalls and so forth is not supported in the Amazon EC2 world.  AWS supports security groups.  One can create a security group for a jump box with ssh access - only port 22 open.  From there a webserver group and database group are created.  The webserver group allows 80 and 443 from the world, but port 22 *only* from the jump box group.  Further the database group allows port 3306 from the webserver group and port 22 from the jump box group.  Add any machines to the webserver group and they can all hit the database.  No one from the world can, and no one can directly ssh to any of your boxes.
+Want to further lock this configuration down?  Only allow ssh access from specific IP addresses on your network, or allow just your subnet.
+
+
+
+
+
+
+
+
+
+
+
+
+) Explain what is AWS?
+AWS stands for Amazon Web Service; it is a collection of remote computing services also known as cloud computing platform.  This new realm of cloud computing is also known as IaaS or Infrastructure as a Service.
+2) Mention what are the key components of AWS?
+The key components of AWS are
+•	Route 53: A DNS web service
+•	Simple E-mail Service: It allows sending e-mail using RESTFUL API call or via regular SMTP
+•	Identity and Access Management: It provides enhanced security and identity management for your AWS account
+•	Simple Storage Device or (S3): It is a storage device and the most widely used AWS service
+•	Elastic Compute Cloud (EC2): It provides on-demand computing resources for hosting applications. It is very useful in case of unpredictable workloads
+•	Elastic Block Store (EBS): It provides persistent storage volumes that attach to EC2 to allow you to persist data past the lifespan of a single EC2
+•	CloudWatch: To monitor AWS resources, It allows administrators to view and collect key Also, one can set a notification alarm in case of trouble.
+3) Explain what is S3?
+S3 stands for Simple Storage Service. You can use S3 interface to store and retrieve any amount of data, at any time and from anywhere on the web.  For S3, the payment model is “pay as you go”.
+4) Explain what is AMI?
+AMI stands for Amazon Machine Image.  It’s a template that provides the information (an operating system, an application server and applications) required to launch an instance, which is a copy of the AMI running as a virtual server in the cloud.  You can launch instances from as many different AMIs as you need.
+5) Mention what is the relation between an instance and AMI?
+From a single AMI, you can launch multiple types of instances.  An instance type defines the hardware of the host computer used for your instance. Each instance type provides different compute and memory capabilities.  Once you launch an instance, it looks like a traditional host, and we can interact with it as we would with any computer.
+ 
+6) What does an AMI include?
+An AMI includes the following things
+•	A template for the root volume for the instance
+•	Launch permissions decide which AWS accounts can avail the AMI to launch instances
+•	A block device mapping that determines the volumes to attach to the instance when it is launched
+7) How can you send request to Amazon S3?
+Amazon S3 is a REST service, you can send request by using the REST API or the AWS SDK wrapper libraries that wrap the underlying Amazon S3 REST API.
+
+
+8) Mention what is the difference between Amazon S3 and EC2?
+The difference between EC2 and Amazon S3 is that
+EC2	S3
+•	It is a cloud web service used for hosting your application	•	It is a data storage system where any amount of data can be stored
+•	It is like a huge computer machine which can run either Linux or Windows and can handle application like PHP, Python, Apache or any databases	•	It has a REST interface and uses secure HMAC-SHA1 authentication keys
+9) How many buckets can you create in AWS by default?
+By default, you can create upto 100 buckets in each of your AWS accounts.
+10) Explain can you vertically scale an Amazon instance? How?
+Yes, you can vertically scale on Amazon instance. For that
+•	Spin up a new larger instance than the one you are currently running
+•	Pause that instance and detach the root webs volume from the server and discard
+•	Then stop your live instance and detach its root volume
+•	Note the unique device ID and attach that root volume to your new server
+•	And start it again
+11) Explain what is T2 instances?
+
+
+T2 instances are designed to provide moderate baseline performance and the capability to burst to higher performance as required by workload.
+12) In VPC with private and public subnets, database servers should ideally be launched into which subnet?
+With private and public subnets in VPC, database servers should ideally launch into private subnets.
+13) Mention what are the security best practices for Amazon EC2?
+For secure Amazon EC2 best practices, follow the following steps
+•	Use AWS identity and access management to control access to your AWS resources
+•	Restrict access by allowing only trusted hosts or networks to access ports on your instance
+•	Review the rules in your security groups regularly
+•	Only open up permissions that your require
+•	Disable password-based login, for instance, launched from your AMI
+14) Explain how the buffer is used in Amazon web services?
+The buffer is used to make the system more robust to manage traffic or load by synchronizing different component.  Usually, components receive and process the requests in an unbalanced way, With the help of buffer, the components will be balanced and will work at the same speed to provide faster services.
+15) While connecting to your instance what are the possible connection issues one might face?
+The possible connection errors one might encounter while connecting instances are
+•	Connection timed out
+•	User key not recognized by the server
+•	Host key not found, permission denied
+•	Unprotected private key file
+•	Server refused our key or No supported authentication method available
+•	Error using MindTerm on Safari Browser
+•	Error using Mac OS X RDP Client
+
+
+
+
+
+
+
+
+
+
+
+
+hy AWS Architect Interview Questions ?
+For the 6th straight year, Gartner placed Amazon Web Services in the “Leaders” quadrant. Also Forbes reported, AWS Certified Solutions Architect Leads the 15 Top Paying IT Certifications. Undoubtedly, AWS Solution Architect position is one of the most sought after amongst IT jobs. We at Edureka are committed to helping you upgrade your career in sync with industry requirements. That’s why we have created a list of AWS Architect Interview questions and answers that will most probably get asked during your interview. If you’ve attended an AWS Architect interview or have additional questions beyond what we have covered, we encourage you to add them in the comments section below. In the meantime, you can maximize the Cloud computing career opportunities that are sure to come your way by taking AWS Architect online training with Edureka. You can write the AWS Architect certification exam after the course at edureka. 
+Get AWS Certified!
+The AWS Solution Architect Role: With regards to AWS, a Solution Architect would design and define AWS architecture for existing systems, migrating them to cloud architectures as well as developing technical road-maps for future AWS cloud implementations. So, in this AWS Architect interview questions blog, in every section, we will start with the basics, and then move our way forward to more technical questions, for the best learning experience please refer the questions in sequence so that the concepts for the next question will be clear in the first.
+Before moving ahead, you may go through the recording of AWS Interview Questions And Answers where our instructor has shared his experience and expertise that will help you to crack any AWS Solutions Architect Interview:
+AWS Interview Questions And Answers | AWS Tutorial | AWS Training | Edureka
+ 
+Section 1: What is Cloud Computing
+For a detailed discussion on this topic, please refer our Cloud Computing blog.
+1. I have some private servers on my premises, also I have distributed some of my workload on the public cloud, what is this architecture called?
+A.	Virtual Private Network
+B.	Private Cloud
+C.	Virtual Private Cloud
+D.	Hybrid Cloud
+Answer D.
+Explanation: This type of architecture would be a hybrid cloud. Why? Because we are using both, the public cloud, and your on premises servers i.e the private cloud. To make this hybrid architecture easy to use, wouldn’t it be better if your private and public cloud were all on the same network(virtually). This is established by including your public cloud servers in a virtual private cloud, and connecting this virtual cloud with your on premise servers using a VPN(Virtual Private Network).
+Section 2: Amazon EC2
+For a detailed discussion on this topic, please refer our EC2 AWS blog.
+2. What does the following command do with respect to the Amazon EC2 security groups?
+ec2-create-group CreateSecurityGroup
+A.	Groups the user created security groups into a new group for easy access.
+B.	Creates a new security group for use with your account.
+C.	Creates a new group inside the security group.
+D.	Creates a new rule inside the security group.
+Answer B.
+Explanation: A Security group is just like a firewall, it controls the traffic in and out of your instance. In AWS terms, the inbound and outbound traffic. The command mentioned is pretty straight forward, it says create security group, and does the same. Moving along, once your security group is created, you can add different rules in it. For example, you have an RDS instance, to access it, you have to add the public IP address of the machine from which you want access the instance  in its security group.
+3. You have a video trans-coding application. The videos are processed according to a queue. If the processing of a video is interrupted in one instance, it is resumed in another instance. Currently there is a huge back-log of videos which needs to be processed, for this you need to add more instances, but you need these instances only until your backlog is reduced. Which of these would be an efficient way to do it?
+You should be using an On Demand instance for the same. Why? First of all, the workload has to be processed now, meaning it is urgent, secondly you don’t need them once your backlog is cleared, therefore Reserved Instance is out of the picture, and since the work is urgent, you cannot stop the work on your instance just because the spot price spiked, therefore Spot Instances shall also not be used. Hence On-Demand instances shall be the right choice in this case.
+4. You have a distributed application that periodically processes large volumes of data across multiple Amazon EC2 Instances. The application is designed to recover gracefully from Amazon EC2 instance failures. You are required to accomplish this task in the most cost effective way.
+Which of the following will meet your requirements?
+A.	Spot Instances
+B.	Reserved instances
+C.	Dedicated instances
+D.	On-Demand instances
+Answer: A
+Explanation: Since the work we are addressing here is not continuous, a reserved instance shall be idle at times, same goes with On Demand instances. Also it does not make sense to launch an On Demand instance whenever work comes up, since it is expensive. Hence Spot Instances will be the right fit because of their low rates and no long term commitments.
+5. How is stopping and terminating an instance different from each other?
+Starting, stopping and terminating are the three states in an EC2 instance, let’s discuss them in detail:
+•	Stopping and Starting an instance: When an instance is stopped, the instance performs a normal shutdown and then transitions to a stopped state. All of its Amazon EBS volumes remain attached, and you can start the instance again at a later time. You are not charged for additional instance hours while the instance is in a stopped state.
+•	Terminating an instance: When an instance is terminated, the instance performs a normal shutdown, then the attached Amazon EBS volumes are deleted unless the volume’s deleteOnTermination attribute is set to false. The instance itself is also deleted, and you can’t start the instance again at a later time.
+6. If I want my instance to run on a single-tenant hardware, which value do I have to set the instance’s tenancy attribute to?
+A.	Dedicated
+B.	Isolated
+C.	One
+D.	Reserved
+Answer A.
+Explanation: The Instance tenancy attribute should be set to Dedicated Instance. The rest of the values are invalid.
+7. When will you incur costs with an Elastic IP address (EIP)?
+A.	When an EIP is allocated.
+B.	When it is allocated and associated with a running instance.
+C.	When it is allocated and associated with a stopped instance.
+D.	Costs are incurred regardless of whether the EIP is associated with a running instance.
+Answer C.
+Explanation: You are not charged, if only one Elastic IP address is attached with your running instance. But you do get charged in the following conditions:
+•	When you use more than one Elastic IPs with your instance.
+•	When your Elastic IP is attached to a stopped instance.
+•	When your Elastic IP is not attached to any instance.
+8. How is a Spot instance different from an On-Demand instance or Reserved Instance?
+First of all, let’s understand that Spot Instance, On-Demand instance and Reserved Instances are all models for pricing. Moving along, spot instances provide the ability for customers to purchase compute capacity with no upfront commitment, at hourly rates usually lower than the On-Demand rate in each region. Spot instances are just like bidding, the bidding price is called Spot Price. The Spot Price fluctuates based on supply and demand for instances, but customers will never pay more than the maximum price they have specified. If the Spot Price moves higher than a customer’s maximum price, the customer’s EC2 instance will be shut down automatically. But the reverse is not true, if the Spot prices come down again, your EC2 instance will not be launched automatically, one has to do that manually.  In Spot and On demand instance, there is no commitment for the duration from the user side, however in reserved instances one has to stick to the time period that he has chosen.
+9. Are the Reserved Instances available for Multi-AZ Deployments?
+A.	Multi-AZ Deployments are only available for Cluster Compute instances types
+B.	Available for all instance types
+C.	Only available for M3 instance types
+D.	D. Not Available for Reserved Instances
+Answer B.
+Explanation: Reserved Instances is a pricing model, which is available for all instance types in EC2.
+10. How to use the processor state control feature available on the  c4.8xlarge instance?
+The processor state control consists of 2 states:
+•	The C state – Sleep state varying from c0 to c6. C6 being the deepest sleep state for a processor
+•	The P state – Performance state p0 being the highest and p15 being the lowest possible frequency.
+Now, why the C state and P state. Processors have cores, these cores need thermal headroom to boost their performance. Now since all the cores are on the processor the temperature should be kept at an optimal state so that all the cores can perform at the highest performance.
+Now how will these states help in that? If a core is put into sleep state it will reduce the overall temperature of the processor and hence other cores can perform better. Now the same can be  synchronized with other cores, so that the processor can boost as many cores it can by timely putting other cores to sleep, and thus get an overall performance boost.
+Concluding, the C and P state can be customized in some EC2 instances like the c4.8xlarge instance and thus you can customize the processor according to your workload.
+How to do it? You can refer this tutorial for the same.
+11. What kind of network performance parameters can you expect when you launch instances in cluster placement group?
+The network performance depends on the instance type and network performance specification, if launched in a placement group you can expect up to
+•	10 Gbps in a single-flow,
+•	20 Gbps in multiflow i.e full duplex
+•	Network traffic outside the placement group will be limited to 5 Gbps(full duplex).
+12. To deploy a 4 node cluster of Hadoop in AWS which instance type can be used?
+First let’s understand what actually happens in a Hadoop cluster, the Hadoop cluster follows a master slave concept. The master machine processes all the data, slave machines store the data and act as data nodes. Since all the storage happens at the slave, a higher capacity hard disk would be recommended and since master does all the processing, a higher RAM and a much better CPU is required. Therefore, you can select the configuration of your machine depending on your workload. For e.g. – In this case c4.8xlarge will be preferred for master machine whereas for slave machine we can select i2.large instance. If you don’t want to deal with configuring your instance and installing hadoop cluster manually, you can straight away launch an Amazon EMR (Elastic Map Reduce) instance which automatically configures the servers for you. You dump your data to be processed in S3, EMR picks it from there, processes it, and dumps it back into S3.
+13. Where do you think an AMI fits, when you are designing an architecture for a solution?
+AMIs(Amazon Machine Images) are like templates of virtual machines and an instance is derived from an AMI. AWS offers pre-baked AMIs which you can choose while you are launching an instance, some AMIs are not free, therefore can be bought from the AWS Marketplace. You can also choose to create your own custom AMI which would help you save space on AWS. For example if you don’t need a set of software on your installation, you can customize your AMI to do that. This makes it cost efficient, since you are removing the unwanted things.
+14. How do you choose an Availability Zone?
+Let’s understand this through an example, consider there’s a company which has user base in India as well as in the US.
+Let us see how we will choose the region for this use case :
+ 
+So, with reference to the above figure the regions to choose between are, Mumbai and North Virginia. Now let us first compare the pricing, you have hourly prices, which can be converted to your per month figure. Here North Virginia emerges as a winner. But, pricing cannot be the only parameter to consider. Performance should also be kept in mind hence, let’s look at latency as well. Latency basically is the time that a server takes to respond to your requests i.e the response time. North Virginia wins again!
+So concluding, North Virginia should be chosen for this use case.
+15. Is one Elastic IP address enough for every instance that I have running?
+Depends! Every instance comes with its own private and public address. The private address is associated exclusively with the instance and is returned  to Amazon EC2 only when it is stopped or terminated. Similarly, the public address is associated exclusively with the instance until it is stopped or terminated. However, this can be replaced by the Elastic IP address, which stays with the instance as long as the user doesn’t manually detach it. But what if you are hosting multiple websites on your EC2 server, in that case you may require more than one Elastic IP address.
+16. What are the best practices for Security in Amazon EC2?
+There are several best practices to secure Amazon EC2. A few of them are given below:
+•	Use AWS Identity and Access Management (IAM) to control access to your AWS resources.
+•	Restrict access by only allowing trusted hosts or networks to access ports on your instance.
+•	Review the rules in your security groups regularly, and ensure that you apply the principle of least
+•	Privilege – only open up permissions that you require.
+•	Disable password-based logins for instances launched from your AMI. Passwords can be found or cracked, and are a security risk.
+Learn To Use AWS Tools
+Section 3: Amazon Storage
+17. You need to configure an Amazon S3 bucket to serve static assets for your public-facing web application. Which method will ensure that all objects uploaded to the bucket are set to public read?
+A.	Set permissions on the object to public read during upload.
+B.	Configure the bucket policy to set all objects to public read.
+C.	Use AWS Identity and Access Management roles to set the bucket to public read.
+D.	Amazon S3 objects default to public read, so no action is needed.
+Answer B.
+Explanation: Rather than making changes to every object, its better to set the policy for the whole bucket. IAM is used to give more granular permissions, since this is a website, all objects would be public by default.
+18. A customer wants to leverage Amazon Simple Storage Service (S3) and Amazon Glacier as part of their backup and archive infrastructure. The customer plans to use third-party software to support this integration. Which approach will limit the access of the third party software to only the Amazon S3 bucket named “company-backup”?
+A.	A custom bucket policy limited to the Amazon S3 API in three Amazon Glacier archive “company-backup”
+B.	A custom bucket policy limited to the Amazon S3 API in “company-backup”
+C.	A custom IAM user policy limited to the Amazon S3 API for the Amazon Glacier archive “company-backup”.
+D.	A custom IAM user policy limited to the Amazon S3 API in “company-backup”.
+Answer D.
+Explanation: Taking queue from the previous questions, this use case involves more granular permissions, hence IAM would be used here.
+19. Can S3 be used with EC2 instances, if yes, how?
+Yes, it can be used for instances with root devices backed by local instance storage. By using Amazon S3, developers have access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites. In order to execute systems in the Amazon EC2 environment, developers use the tools provided to load their Amazon Machine Images (AMIs) into Amazon S3 and to move them between Amazon S3 and Amazon EC2.
+Another use case could be for websites hosted on EC2 to load their static content from S3.
+For a detailed discussion on S3, please refer our S3 AWS blog.
+20. A customer implemented AWS Storage Gateway with a gateway-cached volume at their main office. An event takes the link between the main and branch office offline. Which methods will enable the branch office to access their data?
+A.	Restore by implementing a lifecycle policy on the Amazon S3 bucket.
+B.	Make an Amazon Glacier Restore API call to load the files into another Amazon S3 bucket within four to six hours.
+C.	Launch a new AWS Storage Gateway instance AMI in Amazon EC2, and restore from a gateway snapshot.
+D.	Create an Amazon EBS volume from a gateway snapshot, and mount it to an Amazon EC2 instance.
+Answer C.
+Explanation: The fastest way to do it would be launching a new storage gateway instance. Why? Since time is the key factor which drives every business, troubleshooting this problem will take more time. Rather than we can just restore the previous working state of the storage gateway on a new instance.
+21. When you need to move data over long distances using the internet, for instance across countries or continents to your Amazon S3 bucket, which method or service will you use?
+A.	Amazon Glacier
+B.	Amazon CloudFront
+C.	Amazon Transfer Acceleration
+D.	Amazon Snowball
+Answer C.
+Explanation: You would not use Snowball, because for now, the snowball service does not support cross region data transfer, and since, we are transferring across countries, Snowball cannot be used. Transfer Acceleration shall be the right choice here as it throttles your data transfer with the use of optimized network paths and Amazon’s content delivery network upto 300% compared to normal data transfer speed.
+22. How can you speed up data transfer in Snowball?
+The data transfer can be increased in the following way:
+•	By performing multiple copy operations at one time i.e. if the workstation is powerful enough, you can initiate multiple cp commands each from different terminals, on the same Snowball device.
+•	Copying from multiple workstations to the same snowball.
+•	Transferring large files or by creating a batch of small file, this will reduce the encryption overhead.
+•	Eliminating unnecessary hops i.e. make a setup where the source machine(s) and the snowball are the only machines active on the switch being used, this can hugely improve performance.
+Learn AWS from our Experts!
+Section 4: AWS VPC
+23. If you want to launch Amazon Elastic Compute Cloud (EC2) instances and assign each instance a predetermined private IP address you should:
+A.	Launch the instance from a private Amazon Machine Image (AMI).
+B.	Assign a group of sequential Elastic IP address to the instances.
+C.	Launch the instances in the Amazon Virtual Private Cloud (VPC).
+D.	Launch the instances in a Placement Group.
+Answer C.
+Explanation: The best way of connecting to your cloud resources (for ex- ec2 instances) from your own data center (for eg- private cloud) is a VPC. Once you connect your datacenter to the VPC in which your instances are present, each instance is assigned a private IP address which can be accessed from your datacenter. Hence, you can access your public cloud resources, as if they were on your own network.
+24. Can I connect my corporate datacenter to the Amazon Cloud?
+Yes, you can do this by establishing a VPN(Virtual Private Network) connection between your company’s network and your VPC (Virtual Private Cloud), this will allow you to interact with your EC2 instances as if they were within your existing network.
+25. Is it possible to change the private IP addresses of an EC2 while it is running/stopped in a VPC?
+Primary private IP address is attached with the instance throughout its lifetime and cannot be changed, however secondary private addresses can be unassigned, assigned or moved between interfaces or instances at any point.
+26. Why do you make subnets?
+A.	Because there is a shortage of networks
+B.	To efficiently utilize networks that have a large no. of hosts.
+C.	Because there is a shortage of hosts.
+D.	To efficiently utilize networks that have a small no. of hosts.
+Answer B.
+Explanation: If there is a network which has a large no. of hosts, managing all these hosts can be a tedious job. Therefore we divide this network into subnets (sub-networks) so that managing these hosts becomes simpler.
+27. Which of the following is true?
+A.	You can attach multiple route tables to a subnet
+B.	You can attach multiple subnets to a route table
+C.	Both A and B
+D.	None of these.
+Answer B.
+Explanation: Route Tables are used to route network packets, therefore in a subnet having multiple route tables will lead to confusion as to where the packet has to go. Therefore, there is only one route table in a subnet, and since a route table can have any no. of records or information, hence attaching multiple subnets to a route table is possible.
+28. In CloudFront what happens when content is NOT present at an Edge location and a request is made to it?
+A.	An Error “404 not found” is returned
+B.	CloudFront delivers the content directly from the origin server and stores it in the cache of the edge location
+C.	The request is kept on hold till content is delivered to the edge location
+D.	The request is routed to the next closest edge location
+Answer B. 
+Explanation: CloudFront is a content delivery system, which caches data to the nearest edge location from the user, to reduce latency. If data is not present at an edge location, the first time the data may get transferred from the original server, but from the next time, it will be served from the cached edge.
+29. If I’m using Amazon CloudFront, can I use Direct Connect to transfer objects from my own data center?
+Yes. Amazon CloudFront supports custom origins including origins from outside of AWS. With AWS Direct Connect, you will be charged with the respective data transfer rates.
+30. If my AWS Direct Connect fails, will I lose my connectivity?
+If a backup AWS Direct connect has been configured, in the event of a failure it will switch over to the second one. It is recommended to enable Bidirectional Forwarding Detection (BFD) when configuring your connections to ensure faster detection and failover. On the other hand, if you have configured a backup IPsec VPN connection instead, all VPC traffic will failover to the backup VPN connection automatically. Traffic to/from public resources such as Amazon S3 will be routed over the Internet. If you do not have a backup AWS Direct Connect link or a IPsec VPN link, then Amazon VPC traffic will be dropped in the event of a failure.
+Learn VPC from our Experts!
+Section 5: Amazon Database
+31. If I launch a standby RDS instance, will it be in the same Availability Zone as my primary?
+A.	Only for Oracle RDS types
+B.	Yes
+C.	Only if it is configured at launch
+D.	No
+Answer D.
+Explanation: No, since the purpose of having a standby instance is to avoid an infrastructure failure (if it happens), therefore the standby instance is stored in a different availability zone, which is a physically different independent infrastructure.
+32. When would I prefer Provisioned IOPS over Standard RDS storage?
+A.	If you have batch-oriented workloads
+B.	If you use production online transaction processing (OLTP) workloads.
+C.	If you have workloads that are not sensitive to consistent performance
+D.	All of the above
+Answer A.
+Explanation:  Provisioned IOPS deliver high IO rates but on the other hand it is expensive as well. Batch processing workloads do not require manual intervention they enable full utilization of systems, therefore a provisioned IOPS will be preferred for batch oriented workload.
+33. How is Amazon RDS, DynamoDB and Redshift different?
+•	Amazon RDS is a database management service for relational databases,  it manages patching, upgrading, backing up of data etc. of databases for you without your intervention. RDS  is a Db management service for structured data only.
+•	DynamoDB, on the other hand, is a NoSQL database service, NoSQL deals with unstructured data.
+•	Redshift, is an entirely different service, it is a data warehouse product and is used in data analysis.
+34. If I am running my DB Instance as a Multi-AZ deployment, can I use the standby DB Instance for read or write operations along with primary DB instance?
+A.	Yes
+B.	Only with MySQL based RDS
+C.	Only for Oracle RDS instances
+D.	No
+Answer D.
+Explanation: No, Standby DB instance cannot be used with primary DB instance in parallel, as the former is solely used for standby purposes, it cannot be used unless the primary instance goes down.
+35. Your company’s branch offices are all over the world, they use a software with a multi-regional deployment on AWS, they use MySQL 5.6 for data persistence.
+The task is to run an hourly batch process and read data from every region to compute cross-regional reports which will be distributed to all the branches. This should be done in the shortest time possible. How will you build the DB architecture in order to meet the requirements?
+A.	For each regional deployment, use RDS MySQL with a master in the region and a read replica in the HQ region
+B.	For each regional deployment, use MySQL on EC2 with a master in the region and send hourly EBS snapshots to the HQ region
+C.	For each regional deployment, use RDS MySQL with a master in the region and send hourly RDS snapshots to the HQ region
+D.	For each regional deployment, use MySQL on EC2 with a master in the region and use S3 to copy data files hourly to the HQ region
+Answer A.
+Explanation: For this we will take an RDS instance as a master, because it will manage our database for us and since we have to read from every region, we’ll put a read replica of this instance in every region where the data has to be read from. Option C is not correct since putting a read replica would be more efficient than putting a snapshot, a read replica can be promoted if needed  to an independent DB instance, but with a Db snapshot it becomes mandatory to launch a separate DB Instance.
+36. Can I run more than one DB instance for Amazon RDS for free?
+Yes. You can run more than one Single-AZ Micro database instance, that too for free! However, any use exceeding 750 instance hours, across all Amazon RDS Single-AZ Micro DB instances, across all eligible database engines and regions, will be billed at standard Amazon RDS prices. For example: if you run two Single-AZ Micro DB instances for 400 hours each in a single month, you will accumulate 800 instance hours of usage, of which 750 hours will be free. You will be billed for the remaining 50 hours at the standard Amazon RDS price.
+For a detailed discussion on this topic, please refer our RDS AWS blog.
+37. Which AWS services will you use to collect and process e-commerce data for near real-time analysis?
+A.	Amazon ElastiCache
+B.	Amazon DynamoDB
+C.	Amazon Redshift
+D.	Amazon Elastic MapReduce
+Answer B,C.
+Explanation: DynamoDB is a fully managed NoSQL database service. DynamoDB, therefore can be fed any type of unstructured data, which can be data from e-commerce websites as well, and later, an analysis can be done on them using Amazon Redshift. We are not using Elastic MapReduce, since a near real time analyses is needed.
+38. Can I retrieve only a specific element of the data, if I have a nested JSON data in DynamoDB?
+Yes. When using the GetItem, BatchGetItem, Query or Scan APIs, you can define a Projection Expression to determine which attributes should be retrieved from the table. Those attributes can include scalars, sets, or elements of a JSON document.
+39. A company is deploying a new two-tier web application in AWS. The company has limited staff and requires high availability, and the application requires complex queries and table joins. Which configuration provides the solution for the company’s requirements?
+A.	MySQL Installed on two Amazon EC2 Instances in a single Availability Zone
+B.	Amazon RDS for MySQL with Multi-AZ
+C.	Amazon ElastiCache
+D.	Amazon DynamoDB
+Answer D.
+Explanation: DynamoDB has the ability to scale more than RDS or any other relational database service, therefore DynamoDB would be the apt choice.
+40. What happens to my backups and DB Snapshots if I delete my DB Instance?
+When you delete a DB instance, you have an option of creating a final DB snapshot, if you do that you can restore your database from that snapshot. RDS retains this user-created DB snapshot along with all other manually created DB snapshots after the instance is deleted, also automated backups are deleted and only manually created DB Snapshots are retained.
+41. Which of the following use cases are suitable for Amazon DynamoDB? Choose 2 answers
+A.	Managing web sessions.
+B.	Storing JSON documents.
+C.	Storing metadata for Amazon S3 objects.
+D.	Running relational joins and complex updates.
+Answer C,D.
+Explanation: If all your JSON data have the same fields eg [id,name,age] then it would be better to store it in a relational database, the metadata on the other hand is unstructured, also running relational joins or complex updates would work on DynamoDB as well.
+42. How can I load my data to Amazon Redshift from different data sources like Amazon RDS, Amazon DynamoDB and Amazon EC2?
+You can load the data in the following two ways:
+•	You can use the COPY command to load data in parallel directly to Amazon Redshift from Amazon EMR, Amazon DynamoDB, or any SSH-enabled host.
+•	AWS Data Pipeline provides a high performance, reliable, fault tolerant solution to load data from a variety of AWS data sources. You can use AWS Data Pipeline to specify the data source, desired data transformations, and then execute a pre-written import script to load your data into Amazon Redshift.
+43. Your application has to retrieve data from your user’s mobile every 5 minutes and the data is stored in DynamoDB, later every day at a particular time the data is extracted into S3 on a per user basis and then your application is later used to visualize the data to the user. You are asked to optimize the architecture of the backend system to lower cost, what would you recommend?
+A.	Create a new Amazon DynamoDB (able each day and drop the one for the previous day after its data is on Amazon S3.
+B.	Introduce an Amazon SQS queue to buffer writes to the Amazon DynamoDB table and reduce provisioned write throughput.
+C.	Introduce Amazon Elasticache to cache reads from the Amazon DynamoDB table and reduce provisioned read throughput.
+D.	Write data directly into an Amazon Redshift cluster replacing both Amazon DynamoDB and Amazon S3.
+Answer C.
+Explanation: Since our work requires the data to be extracted and analyzed, to optimize this process a person would use provisioned IO, but since it is expensive, using a ElastiCache memoryinsread to cache the results in the memory can reduce the provisioned read throughput and hence reduce cost without affecting the performance.
+44. You are running a website on EC2 instances deployed across multiple Availability Zones with a Multi-AZ RDS MySQL Extra Large DB Instance. The site performs a high number of small reads and writes per second and relies on an eventual consistency model. After comprehensive tests you discover that there is read contention on RDS MySQL. Which are the best approaches to meet these requirements? (Choose 2 answers)
+A.	Deploy ElastiCache in-memory cache running in each availability zone
+B.	Implement sharding to distribute load to multiple RDS MySQL instances
+C.	Increase the RDS MySQL Instance size and Implement provisioned IOPS
+D.	Add an RDS MySQL read replica in each availability zone
+Answer A,C.
+Explanation:  Since it does a lot of read writes, provisioned IO may become expensive. But we need high performance as well, therefore the data can be cached using ElastiCache which can be used for frequently reading the data. As for RDS since read contention is happening, the instance size should be increased and provisioned IO should be introduced to increase the performance.
+45. A startup is running a pilot deployment of around 100 sensors to measure street noise and air quality in urban areas for 3 months. It was noted that every month around 4GB of sensor data is generated. The company uses a load balanced auto scaled layer of EC2 instances and a RDS database with 500 GB standard storage. The pilot was a success and now they want to deploy at least  100K sensors which need to be supported by the backend. You need to store the data for at least 2 years to analyze it. Which setup of the following would you prefer?
+A.	Add an SQS queue to the ingestion layer to buffer writes to the RDS instance
+B.	Ingest data into a DynamoDB table and move old data to a Redshift cluster
+C.	Replace the RDS instance with a 6 node Redshift cluster with 96TB of storage
+D.	Keep the current architecture but upgrade RDS storage to 3TB and 10K provisioned IOPS
+Answer C.
+Explanation: A Redshift cluster would be preferred because it easy to scale, also the work would be done in parallel through the nodes, therefore is perfect for a bigger workload like our use case. Since each month 4 GB of data is generated, therefore in 2 year, it should be around 96 GB. And since the servers will be increased to 100K in number, 96 GB will approximately become 96TB. Hence option C is the right answer.
+Learn AWS from Industry Leaders!
+Section 6: AWS Auto Scaling, AWS Load Balancer
+46. Suppose you have an application where you have to render images and also do some general computing. From the following  services which service will best fit your need?
+A.	Classic Load Balancer
+B.	Application Load Balancer
+C.	Both of them
+D.	None of these
+Answer B.
+Explanation: You will choose an application load balancer, since it supports path based routing, which means it can take decisions based on the URL, therefore if your task needs image rendering it will route it to a different instance, and for general computing it will route it to a different instance.
+47. What is the difference between Scalability and Elasticity?
+Scalability is the ability of a system to increase its hardware resources to handle the increase in demand. It can be done by increasing the hardware specifications or increasing the processing nodes.
+Elasticity is the ability of a system to handle increase in the workload by adding additional hardware resources when the demand increases(same as scaling) but also rolling back the scaled resources, when the resources are no longer needed. This is particularly helpful in Cloud environments, where a pay per use model is followed.
+48. How will you change the instance type for instances which are running in your application tier and are using Auto Scaling. Where will you change it from the following areas?
+A.	  Auto Scaling policy configuration
+B.	  Auto Scaling group
+C.	  Auto Scaling tags configuration
+D.	  Auto Scaling launch configuration
+Answer D.
+Explanation: Auto scaling tags configuration, is used to attach metadata to your instances, to change the instance type you have to use auto scaling launch configuration.
+49. You have a content management system running on an Amazon EC2 instance that is approaching 100% CPU utilization. Which option will reduce load on the Amazon EC2 instance?
+A.	  Create a load balancer, and register the Amazon EC2 instance with it
+B.	  Create a CloudFront distribution, and configure the Amazon EC2 instance as the origin
+C.	  Create an Auto Scaling group from the instance using the CreateAutoScalingGroup action
+D.	  Create a launch configuration from the instance using the CreateLaunchConfigurationAction
+Answer A.
+Explanation:Creating alone an autoscaling group will not solve the issue, until you attach a load balancer to it. Once you attach a load balancer to an autoscaling group, it will efficiently distribute the load among all the instances. Option B – CloudFront is a CDN, it is a data transfer tool therefore will not help reduce load on the EC2 instance. Similarly the other option – Launch configuration is a template for configuration which has no connection with reducing loads.
+50. When should I use a Classic Load Balancer and when should I use an Application load balancer?
+A Classic Load Balancer is ideal for simple load balancing of traffic across multiple EC2 instances, while an Application Load Balancer is ideal for microservices or container-based architectures where there is a need to route traffic to multiple services or load balance across multiple ports on the same EC2 instance.
+For a detailed discussion on Auto Scaling and Load Balancer, please refer our EC2 AWS blog.
+51. What does Connection draining do?
+A.	 Terminates instances which are not in use.
+B.	 Re-routes traffic from instances which are to be updated or failed a health check.
+C.	 Re-routes traffic from instances which have more workload to instances which have less workload.
+D.	 Drains all the connections from an instance, with one click.
+Answer B.
+Explanation: Connection draining is a service under ELB which constantly monitors the health of the instances. If any instance fails a health check or if any instance has to be patched with a software update, it  pulls all the traffic from that instance and re routes them to other instances.
+52. When an instance is unhealthy, it is terminated and replaced with a new one, which of the following services does that?
+A.	 Sticky Sessions
+B.	 Fault Tolerance
+C.	 Connection Draining
+D.	 Monitoring
+Answer B.
+Explanation: When ELB detects that an instance is unhealthy, it starts routing incoming traffic to other healthy instances in the region. If all the instances in a region becomes unhealthy, and if you have instances in some other availability zone/region, your traffic is directed to them. Once your instances become healthy again, they are re routed back to the original instances.
+53. What are lifecycle hooks used for in AutoScaling?
+A.	  They are used to do health checks on instances
+B.	 They are used to put an additional wait time to a scale in or scale out event.
+C.	 They are used to shorten the wait time to a scale in or scale out event
+D.	 None of these
+Answer B.
+Explanation: Lifecycle hooks are used for putting wait time before any lifecycle action i.e launching or terminating an instance happens. The purpose of this wait time, can be anything from extracting log files before terminating an instance or installing the necessary softwares in an instance before launching it.
+54. A user has setup an Auto Scaling group. Due to some issue the group has failed to launch a single instance for more than 24 hours. What will happen to Auto Scaling in this condition?
+A.	Auto Scaling will keep trying to launch the instance for 72 hours
+B.	Auto Scaling will suspend the scaling process
+C.	Auto Scaling will start an instance in a separate region
+D.	The Auto Scaling group will be terminated automatically
+Answer B.
+Explanation: Auto Scaling allows you to suspend and then resume one or more of the Auto Scaling processes in your Auto Scaling group. This can be very useful when you want to investigate a configuration problem or other issue with your web application, and then make changes to your application, without triggering the Auto Scaling process.
+Enroll NOW!
+Section 7: CloudTrail, Route 53
+55. You have an EC2 Security Group with several running EC2 instances. You changed the Security Group rules to allow inbound traffic on a new port and protocol, and then launched several new instances in the same Security Group. The new rules apply:
+A.	Immediately to all instances in the security group.
+B.	Immediately to the new instances only.
+C.	Immediately to the new instances, but old instances must be stopped and restarted before the new rules apply.
+D.	To all instances, but it may take several minutes for old instances to see the changes.
+Answer A.
+Explanation: Any rule specified in an EC2 Security Group applies immediately to all the instances, irrespective of when they are launched before or after adding a rule.
+56. To create a mirror image of your environment in another region for disaster recovery, which of the following AWS resources do not need to be recreated in the second region? ( Choose 2 answers )
+A.	Route 53 Record Sets
+B.	Elastic IP Addresses (EIP)
+C.	EC2 Key Pairs
+D.	Launch configurations
+E.	Security Groups
+Answer A,B.
+Explanation: Elastic IPs and Route 53 record sets are common assets therefore there is no need to replicate them, since Elastic IPs and Route 53 are valid across regions
+57. A customer wants to capture all client connection information from his load balancer at an interval of 5 minutes, which of the following options should he choose for his application?
+A.	Enable AWS CloudTrail for the loadbalancer.
+B.	Enable access logs on the load balancer.
+C.	Install the Amazon CloudWatch Logs agent on the load balancer.
+D.	Enable Amazon CloudWatch metrics on the load balancer.
+Answer A.
+Explanation: AWS CloudTrail provides inexpensive logging information for load balancer and other AWS resources This logging information can be used for analyses and other administrative work, therefore is perfect for this use case.
+58. A customer wants to track access to their Amazon Simple Storage Service (S3) buckets and also use this information for their internal security and access audits. Which of the following will meet the Customer requirement?
+A.	Enable AWS CloudTrail to audit all Amazon S3 bucket access.
+B.	Enable server access logging for all required Amazon S3 buckets.
+C.	Enable the Requester Pays option to track access via AWS Billing
+D.	Enable Amazon S3 event notifications for Put and Post.
+Answer A.
+Explanation: AWS CloudTrail has been designed for logging and tracking API calls. Also this service is available for storage, therefore should be used in this use case.
+59. Which of the following are true regarding AWS CloudTrail? (Choose 2 answers)
+A.	CloudTrail is enabled globally
+B.	CloudTrail is enabled on a per-region and service basis
+C.	Logs can be delivered to a single Amazon S3 bucket for aggregation.
+D.	CloudTrail is enabled for all available services within a region.
+Answer B,C.
+Explanation: Cloudtrail is not enabled for all the services and is also not available for all the regions. Therefore option B is correct, also the logs can be delivered to your S3 bucket, hence C is also correct.
+60. What happens if CloudTrail is turned on for my account but my Amazon S3 bucket is not configured with the correct policy?
+CloudTrail files are delivered according to S3 bucket policies. If the bucket is not configured or is misconfigured, CloudTrail might not be able to deliver the log files.
+61. How do I transfer my existing domain name registration to Amazon Route 53 without disrupting my existing web traffic?
+You will need to get a list of the DNS record data for your domain name first, it is generally available in the form of a “zone file” that you can get from your existing DNS provider. Once you receive the DNS record data, you can use Route 53’s Management Console or simple web-services interface to create a hosted zone that will store your DNS records for your domain name and follow its transfer process. It also includes steps such as updating the nameservers for your domain name to the ones associated with your hosted zone. For completing the process you have to contact the registrar with whom you registered your domain name and follow the transfer process. As soon as your registrar propagates the new name server delegations, your DNS queries will start to get answered.
+Learn AWS Now!
+Section 8: AWS SQS, AWS SNS, AWS SES, AWS ElasticBeanstalk
+62. Which of the following services you would not use to deploy an app?
+A.	Elastic Beanstalk
+B.	Lambda
+C.	Opsworks
+D.	CloudFormation
+Answer B.
+Explanation: Lambda is used for running server-less applications. It can be used to deploy functions triggered by events. When we say serverless, we mean without you worrying about the computing resources running in the background. It is not designed for creating applications which are publicly accessed.
+63. How does Elastic Beanstalk apply updates?
+A.	By having a duplicate ready with updates before swapping.
+B.	By updating on the instance while it is running
+C.	By taking the instance down in the maintenance window
+D.	Updates should be installed manually
+Answer A.
+Explanation: Elastic Beanstalk prepares a duplicate copy of the instance, before updating the original instance, and routes your traffic to the duplicate instance, so that, incase your updated application fails, it will switch back to the original instance, and there will be no downtime experienced by the users who are using your application.
+64. How is AWS Elastic Beanstalk different than AWS OpsWorks?
+AWS Elastic Beanstalk is an application management platform while OpsWorks is a configuration management platform. BeanStalk is an easy to use service which is used for deploying and scaling web applications developed with Java, .Net, PHP, Node.js, Python, Ruby, Go and Docker. Customers upload their code and Elastic Beanstalk automatically handles the deployment. The application will be ready to use without any infrastructure or resource configuration.
+In contrast, AWS Opsworks is an integrated configuration management platform for IT administrators or DevOps engineers who want a high degree of customization and control over operations.
+65. What happens if my application stops responding to requests in beanstalk?
+AWS Beanstalk applications have a system in place for avoiding failures in the underlying infrastructure. If an Amazon EC2 instance fails for any reason, Beanstalk will use Auto Scaling to automatically launch a new instance. Beanstalk can also detect if your application is not responding on the custom link, even though the infrastructure appears healthy, it will be logged as an environmental event( e.g a bad version was deployed) so you can take an appropriate action.
+For a detailed discussion on this topic, please refer Lambda AWS blog.
+Learn AWS from our Experts!
+Section 9: AWS OpsWorks, AWS KMS
+66. How is AWS OpsWorks different than AWS CloudFormation?
+OpsWorks and CloudFormation both support application modelling, deployment, configuration, management and related activities. Both support a wide variety of architectural patterns, from simple web applications to highly complex applications. AWS OpsWorks and AWS CloudFormation differ in abstraction level and areas of focus.
+AWS CloudFormation is a building block service which enables customer to manage almost any AWS resource via JSON-based domain specific language. It provides foundational capabilities for the full breadth of AWS, without prescribing a particular model for development and operations. Customers define templates and use them to provision and manage AWS resources, operating systems and application code.
+In contrast, AWS OpsWorks is a higher level service that focuses on providing highly productive and reliable DevOps experiences for IT administrators and ops-minded developers. To do this, AWS OpsWorks employs a configuration management model based on concepts such as stacks and layers, and provides integrated experiences for key activities like deployment, monitoring, auto-scaling, and automation. Compared to AWS CloudFormation, AWS OpsWorks supports a narrower range of application-oriented AWS resource types including Amazon EC2 instances, Amazon EBS volumes, Elastic IPs, and Amazon CloudWatch metrics.
+67. I created a key in Oregon region to encrypt my data in North Virginia region for security purposes. I added two users to the key and an external AWS account. I wanted to encrypt an object in S3, so when I tried, the key that I just created was not listed.  What could be the reason?  
+A.	External aws accounts are not supported.
+B.	AWS S3 cannot be integrated KMS.
+C.	The Key should be in the same region.
+D.	New keys take some time to reflect in the list.
+Answer C.
+Explanation: The key created and the data to be encrypted should be in the same region. Hence the approach taken here to secure the data is incorrect.
+68.  A company needs to monitor the read and write IOPS for their AWS MySQL RDS instance and send real-time alerts to their operations team. Which AWS services can accomplish this?
+A.	Amazon Simple Email Service
+B.	Amazon CloudWatch
+C.	Amazon Simple Queue Service
+D.	Amazon Route 53
+Answer B.
+Explanation: Amazon CloudWatch is a cloud monitoring tool and hence this is the right service for the mentioned use case. The other options listed here are used for other purposes for example route 53 is used for DNS services, therefore CloudWatch will be the apt choice.
+69. What happens when one of the resources in a stack cannot be created successfully in AWS OpsWorks?
+When an event like this occurs, the “automatic rollback on error” feature is enabled, which causes all the AWS resources which were created successfully till the point where the error occurred to be deleted. This is helpful since it does not leave behind any erroneous data, it ensures the fact that stacks are either created fully or not created at all. It is useful in events where you may accidentally exceed your limit of the no. of Elastic IP addresses or maybe you may not have access to an EC2 AMI that you are trying to run etc.
+70. What automation tools can you use to spinup servers?
+Any of the following tools can be used:
+•	Roll-your-own scripts, and use the AWS API tools.  Such scripts could be written in bash, perl or other language of your choice.
+•	Use a configuration management and provisioning tool like puppet or its successor Opscode Chef.  You can also use a tool like Scalr.
+•	Use a managed solution such as Rightscale.
+Overwhelmed with all these questions?
+We at edureka! are here to help you with every step on your journey, for becoming a AWS Solution Architect, therefore besides this AWS Architect Interview Questions we have come up with a curriculum which covers exactly what you would need to crack the Solution Architect Exam! You can have a look at the course details for AWS training here. 
+
+
+
+
+
+
+
+
+
+
+
